@@ -30,6 +30,22 @@ function App() {
     }
   };
 
+  const handleSubtractCartItem = (idNum) => {
+    const prevCart = [...cart];
+    const index = prevCart.findIndex((item) => item.id === idNum);
+    const itemSelected = prevCart[index];
+    if (itemSelected.quantity > 1) {
+      itemSelected.quantity -= 1;
+      const newCart = [
+        ...prevCart.slice(0, index),
+        itemSelected,
+        ...prevCart.slice(index + 1),
+      ];
+      setCart(newCart);
+      console.log('subtract item from cart');
+    }
+  };
+
   return (
     <Router>
       <div className="App">
@@ -50,6 +66,7 @@ function App() {
                   cart={cart}
                   books={books}
                   handleAddCartItem={handleAddCartItem}
+                  handleSubtractCartItem={handleSubtractCartItem}
                 />
               }
             />
