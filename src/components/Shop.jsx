@@ -3,7 +3,7 @@ function Shop({ books, handleAddCartItem }) {
     <div className="shop">
       <h1>Shop</h1>
       {books.map((book) => (
-        <div key={book.id}>
+        <div key={book.id} className="mb-5">
           <p>
             {book.title} ${book.price}
           </p>

@@ -2,10 +2,10 @@ import { Link } from 'react-router-dom';
 
 function Navbar({ cart }) {
   return (
-    <nav className="navbar navbar-expand-lg bg-light">
+    <nav className="navbar navbar-expand-sm bg-light">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
-          Navbar
+          Fairy Tale Books
         </Link>
         <button
           className="navbar-toggler"
@@ -20,11 +20,6 @@ function Navbar({ cart }) {
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
-            <li className="nav-item">
-              <Link className="nav-link" to="/">
-                Home
-              </Link>
-            </li>
             <li className="nav-item">
               <Link className="nav-link" to="/shop">
                 Shop

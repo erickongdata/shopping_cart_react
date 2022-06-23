@@ -4,11 +4,10 @@ function Cart({
   handleAddCartItem,
   handleSubtractCartItem,
   handleRemoveCartItem,
+  totalPrice,
 }) {
-  const bookTitle = (id) => {
-    const bookSelect = books.find((book) => book.id === id);
-    return bookSelect.title;
-  };
+  const bookTitle = (id) => books.find((book) => book.id === id).title;
+  const bookPrice = (id) => books.find((book) => book.id === id).price;
 
   return (
     <div className="cart">
@@ -19,7 +18,11 @@ function Cart({
         cart.map((item) => (
           <div key={item.id}>
             <p>
-              {bookTitle(item.id)}, id: {item.id}, quantity: {item.quantity}
+              {bookTitle(item.id)}, id: {item.id}
+            </p>
+            <p>
+              quantity: {item.quantity}, price: $
+              {bookPrice(item.id) * item.quantity}
             </p>
             <button type="button" onClick={() => handleAddCartItem(item.id)}>
               +
@@ -36,6 +39,7 @@ function Cart({
           </div>
         ))
       )}
+      <h2>Total: ${totalPrice}</h2>
     </div>
   );
 }

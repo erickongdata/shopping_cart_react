@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Shop from './components/Shop';
@@ -10,6 +10,7 @@ const { books } = productsJson;
 
 function App() {
   const [cart, setCart] = useState([]);
+  const [cartTotal, setCartTotal] = useState(0);
 
   const handleAddCartItem = (idNum) => {
     const prevCart = [...cart];
@@ -52,6 +53,19 @@ function App() {
     setCart(newCart);
   };
 
+  const calculateTotalPrice = () => {
+    const amount = cart.reduce(
+      (total, item) =>
+        total + books.find((book) => book.id === item.id).price * item.quantity,
+      0
+    );
+    setCartTotal(amount.toFixed(2));
+  };
+
+  useEffect(() => {
+    calculateTotalPrice();
+  }, [cart]);
+
   return (
     <Router>
       <div className="App">
@@ -74,6 +88,7 @@ function App() {
                   handleAddCartItem={handleAddCartItem}
                   handleSubtractCartItem={handleSubtractCartItem}
                   handleRemoveCartItem={handleRemoveCartItem}
+                  totalPrice={cartTotal}
                 />
               }
             />
