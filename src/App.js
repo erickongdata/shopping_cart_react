@@ -15,10 +15,13 @@ function App() {
     const prevCart = [...cart];
     const index = prevCart.findIndex((item) => item.id === idNum);
     if (index >= 0) {
-      const newCart = prevCart.filter((item) => item.id !== idNum);
       const itemAdded = prevCart[index];
       itemAdded.quantity += 1;
-      newCart.push(itemAdded);
+      const newCart = [
+        ...prevCart.slice(0, index),
+        itemAdded,
+        ...prevCart.slice(index + 1),
+      ];
       setCart(newCart);
       console.log('added more to cart');
     } else {
@@ -40,7 +43,16 @@ function App() {
                 <Shop books={books} handleAddCartItem={handleAddCartItem} />
               }
             />
-            <Route path="/cart" element={<Cart cart={cart} books={books} />} />
+            <Route
+              path="/cart"
+              element={
+                <Cart
+                  cart={cart}
+                  books={books}
+                  handleAddCartItem={handleAddCartItem}
+                />
+              }
+            />
           </Routes>
         </div>
       </div>

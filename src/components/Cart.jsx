@@ -1,4 +1,4 @@
-function Cart({ cart, books }) {
+function Cart({ cart, books, handleAddCartItem }) {
   const bookTitle = (id) => {
     const bookSelect = books.find((book) => book.id === id);
     return bookSelect.title;
@@ -11,9 +11,14 @@ function Cart({ cart, books }) {
         <p>No items to display</p>
       ) : (
         cart.map((item) => (
-          <p key={item.id}>
-            {bookTitle(item.id)}, id: {item.id}, quantity: {item.quantity}
-          </p>
+          <div key={item.id}>
+            <p>
+              {bookTitle(item.id)}, id: {item.id}, quantity: {item.quantity}
+            </p>
+            <button type="button" onClick={() => handleAddCartItem(item.id)}>
+              +
+            </button>
+          </div>
         ))
       )}
     </div>
