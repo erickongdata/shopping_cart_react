@@ -1,4 +1,10 @@
-function Cart({ cart, books, handleAddCartItem, handleSubtractCartItem }) {
+function Cart({
+  cart,
+  books,
+  handleAddCartItem,
+  handleSubtractCartItem,
+  handleRemoveCartItem,
+}) {
   const bookTitle = (id) => {
     const bookSelect = books.find((book) => book.id === id);
     return bookSelect.title;
@@ -23,6 +29,9 @@ function Cart({ cart, books, handleAddCartItem, handleSubtractCartItem }) {
               onClick={() => handleSubtractCartItem(item.id)}
             >
               -
+            </button>
+            <button type="button" onClick={() => handleRemoveCartItem(item.id)}>
+              x
             </button>
           </div>
         ))

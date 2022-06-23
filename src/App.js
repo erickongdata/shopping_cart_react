@@ -46,6 +46,12 @@ function App() {
     }
   };
 
+  const handleRemoveCartItem = (idNum) => {
+    const prevCart = [...cart];
+    const newCart = prevCart.filter((item) => item.id !== idNum);
+    setCart(newCart);
+  };
+
   return (
     <Router>
       <div className="App">
@@ -67,6 +73,7 @@ function App() {
                   books={books}
                   handleAddCartItem={handleAddCartItem}
                   handleSubtractCartItem={handleSubtractCartItem}
+                  handleRemoveCartItem={handleRemoveCartItem}
                 />
               }
             />
