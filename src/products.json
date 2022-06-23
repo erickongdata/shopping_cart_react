@@ -1,0 +1,39 @@
+{
+  "books": [
+    {
+      "id": "1",
+      "title": "Beauty and the Beast",
+      "author": "Jeanne-Marie Leprince de Beaumont",
+      "price": 12.99,
+      "description": "Beauty and the Beast is a traditional fairy tale in which an ugly beast must earn the true love of a beautiful girl to free him from the spell of an evil fairy. The first published version was written by French author Gabrielle-Suzanne Barbot de Villeneuve in the middle 18th century. It was a novel-length story intended for adult readers and addressing the issues of the marriage system of the day in which women had no right to choose their husband or to refuse to marry. Jeanne-Marie Le Prince de Beaumont simplified and shortened Villeneuve's work and published it in a magazine for young ladies."
+    },
+    {
+      "id": "2",
+      "title": "Cinderella",
+      "author": "Charles Perrault",
+      "price": 10.99,
+      "description": "Illustrations featuring mix of styles in both clothing and architecture set the story in an imaginary yet vaguely familiar landscape, lit by a dreamlike haze. The smoothly told story contains the familiar details and a happy ending in which Cinderella forgives her stepfamily."
+    },
+    {
+      "id": "3",
+      "title": "The Ugly Duckling",
+      "author": "Hans Christian Andersen",
+      "price": 9.99,
+      "description": "An ugly duckling spends an unhappy year ostracized by other animals before he grows into a beautiful swan."
+    },
+    {
+      "id": "4",
+      "title": "Snow White and the Seven Dwarfs",
+      "author": "Wanda Gág",
+      "price": 9.99,
+      "description": "'Oh, please, dear hunter, have mercy If you will let me go, I'll gladly wander away, far away into the wildwood and I'll never come back again.' \"The huntsman was glad enough to help the sweet innocent girl, so he said, 'Well, run away then, poor child, and may the beasts of the wood have mercy on you.' As a token he brought back the heart of a wild boar, and the wicked Queen thought it was Snow White's. She had it cooked and ate it, I am sorry to say, with salt and great relish.\" Wanda Gag interjects her own humor and adorable illustrations into this classic tale of the Brothers Grimm."
+    },
+    {
+      "id": "5",
+      "title": "Hansel and Gretel",
+      "author": "Jacob Grimm, Wilhelm Grimm",
+      "price": 8.99,
+      "description": "The classic fairy tale that celebrates Hansel and Gretel's strength and spirit over the malevolence of the world around them. Set in Atlantic Canada."
+    }
+  ]
+}
