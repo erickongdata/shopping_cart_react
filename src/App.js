@@ -25,10 +25,8 @@ function App() {
         ...prevCart.slice(index + 1),
       ];
       setCart(newCart);
-      console.log('added more to cart');
     } else {
       setCart([...prevCart, { id: idNum, quantity: 1 }]);
-      console.log('added to cart');
     }
   };
 
@@ -44,7 +42,6 @@ function App() {
         ...prevCart.slice(index + 1),
       ];
       setCart(newCart);
-      console.log('subtract item from cart');
     }
   };
 

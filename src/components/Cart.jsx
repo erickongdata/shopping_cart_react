@@ -26,7 +26,7 @@ function Cart({
             </Link>
             <p className="text-secondary">
               quantity: {item.quantity}, price: $
-              {bookPrice(item.id) * item.quantity}
+              {(bookPrice(item.id) * item.quantity).toFixed(2)}
             </p>
             <button type="button" onClick={() => handleAddCartItem(item.id)}>
               +
