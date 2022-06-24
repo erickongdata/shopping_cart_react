@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Shop from './components/Shop';
 import Cart from './components/Cart';
+import Product from './components/Product';
 import productsJson from './products.json';
 
 const { books } = productsJson;
@@ -73,12 +74,7 @@ function App() {
         <div className="content">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route
-              path="/shop"
-              element={
-                <Shop books={books} handleAddCartItem={handleAddCartItem} />
-              }
-            />
+            <Route path="/shop" element={<Shop books={books} />} />
             <Route
               path="/cart"
               element={
@@ -89,6 +85,16 @@ function App() {
                   handleSubtractCartItem={handleSubtractCartItem}
                   handleRemoveCartItem={handleRemoveCartItem}
                   totalPrice={cartTotal}
+                />
+              }
+            />
+            <Route
+              path="/product/:idNum"
+              element={
+                <Product
+                  books={books}
+                  handleAddCartItem={handleAddCartItem}
+                  cart={cart}
                 />
               }
             />

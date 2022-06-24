@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 function Cart({
   cart,
   books,
@@ -16,11 +18,13 @@ function Cart({
         <p>No items to display</p>
       ) : (
         cart.map((item) => (
-          <div key={item.id}>
-            <p>
-              {bookTitle(item.id)}, id: {item.id}
-            </p>
-            <p>
+          <div key={item.id} className="mb-5">
+            <Link to={`/product/${item.id}`} className="lead text-dark">
+              <h3>
+                {bookTitle(item.id)}, id: {item.id}
+              </h3>
+            </Link>
+            <p className="text-secondary">
               quantity: {item.quantity}, price: $
               {bookPrice(item.id) * item.quantity}
             </p>
