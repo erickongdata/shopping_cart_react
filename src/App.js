@@ -20,13 +20,15 @@ function App() {
     const index = prevCart.findIndex((item) => item.id === idNum);
     if (index >= 0) {
       const itemAdded = prevCart[index];
-      itemAdded.quantity += 1;
-      const newCart = [
-        ...prevCart.slice(0, index),
-        itemAdded,
-        ...prevCart.slice(index + 1),
-      ];
-      setCart(newCart);
+      if (itemAdded.quantity < 99) {
+        itemAdded.quantity += 1;
+        const newCart = [
+          ...prevCart.slice(0, index),
+          itemAdded,
+          ...prevCart.slice(index + 1),
+        ];
+        setCart(newCart);
+      }
     } else {
       setCart([...prevCart, { id: idNum, quantity: 1 }]);
     }
@@ -51,6 +53,21 @@ function App() {
     const prevCart = [...cart];
     const newCart = prevCart.filter((item) => item.id !== idNum);
     setCart(newCart);
+  };
+
+  const handleItemNumChange = (idNum, itemQuantity) => {
+    const prevCart = [...cart];
+    const index = prevCart.findIndex((item) => item.id === idNum);
+    const itemSelected = prevCart[index];
+    if (itemQuantity > 0 && itemQuantity <= 99) {
+      itemSelected.quantity = itemQuantity;
+      const newCart = [
+        ...prevCart.slice(0, index),
+        itemSelected,
+        ...prevCart.slice(index + 1),
+      ];
+      setCart(newCart);
+    }
   };
 
   const calculateTotalPrice = () => {
@@ -92,6 +109,7 @@ function App() {
                   handleAddCartItem={handleAddCartItem}
                   handleSubtractCartItem={handleSubtractCartItem}
                   handleRemoveCartItem={handleRemoveCartItem}
+                  handleItemNumChange={handleItemNumChange}
                   totalPrice={totalPrice}
                 />
               }

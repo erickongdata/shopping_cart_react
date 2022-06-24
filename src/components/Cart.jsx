@@ -6,6 +6,7 @@ function Cart({
   handleAddCartItem,
   handleSubtractCartItem,
   handleRemoveCartItem,
+  handleItemNumChange,
   totalPrice,
 }) {
   // Get item data from json data file
@@ -28,14 +29,21 @@ function Cart({
               quantity: {item.quantity}, price: $
               {(itemSelected(item.id).price * item.quantity).toFixed(2)}
             </p>
-            <button type="button" onClick={() => handleAddCartItem(item.id)}>
-              +
-            </button>
             <button
               type="button"
               onClick={() => handleSubtractCartItem(item.id)}
             >
               -
+            </button>
+            <input
+              type="number"
+              value={item.quantity}
+              min="1"
+              max="99"
+              onChange={(e) => handleItemNumChange(item.id, +e.target.value)}
+            />
+            <button type="button" onClick={() => handleAddCartItem(item.id)}>
+              +
             </button>
             <button type="button" onClick={() => handleRemoveCartItem(item.id)}>
               x
