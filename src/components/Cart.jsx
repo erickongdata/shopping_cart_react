@@ -2,14 +2,14 @@ import { Link } from 'react-router-dom';
 
 function Cart({
   cart,
-  books,
+  data,
   handleAddCartItem,
   handleSubtractCartItem,
   handleRemoveCartItem,
   totalPrice,
 }) {
-  const bookTitle = (id) => books.find((book) => book.id === id).title;
-  const bookPrice = (id) => books.find((book) => book.id === id).price;
+  // Get item data from json data file
+  const itemSelected = (id) => data.find((item) => item.id === id);
 
   return (
     <div className="cart">
@@ -21,12 +21,12 @@ function Cart({
           <div key={item.id} className="mb-5">
             <Link to={`/product/${item.id}`} className="lead text-dark">
               <h3>
-                {bookTitle(item.id)}, id: {item.id}
+                {itemSelected(item.id).title}, id: {item.id}
               </h3>
             </Link>
             <p className="text-secondary">
               quantity: {item.quantity}, price: $
-              {(bookPrice(item.id) * item.quantity).toFixed(2)}
+              {(itemSelected(item.id).price * item.quantity).toFixed(2)}
             </p>
             <button type="button" onClick={() => handleAddCartItem(item.id)}>
               +

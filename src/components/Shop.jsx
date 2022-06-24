@@ -1,14 +1,14 @@
 import { Link } from 'react-router-dom';
 
-function Shop({ books }) {
+function Shop({ data }) {
   return (
     <div className="shop">
       <h1>Shop</h1>
-      {books.map((book) => (
-        <div key={book.id} className="mb-5">
-          <Link to={`/product/${book.id}`}>
+      {data.map((item) => (
+        <div key={item.id} className="mb-5">
+          <Link to={`/product/${item.id}`}>
             <p>
-              {book.title} ${book.price}
+              {item.title} ${item.price}
             </p>
           </Link>
         </div>

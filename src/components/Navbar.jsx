@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
 
-function Navbar({ cart }) {
+function Navbar({ siteTitle, cart }) {
   return (
     <nav className="navbar navbar-expand-sm bg-light">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
-          Fairy Tale Books
+          {siteTitle}
         </Link>
         <button
           className="navbar-toggler"

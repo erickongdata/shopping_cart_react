@@ -5,11 +5,12 @@ import Home from './components/Home';
 import Shop from './components/Shop';
 import Cart from './components/Cart';
 import Product from './components/Product';
+import NotFound from './components/NotFound';
 import productsJson from './products.json';
 
-const { books } = productsJson;
-
 function App() {
+  // Get product data from products.json file and assign to variable 'data'
+  const { data } = productsJson;
   const [cart, setCart] = useState([]);
   const [cartTotal, setCartTotal] = useState(0);
 
@@ -52,9 +53,9 @@ function App() {
   };
 
   const calculateTotalPrice = () => {
+    const itemPrice = (id) => data.find((item) => item.id === id).price;
     const amount = cart.reduce(
-      (total, item) =>
-        total + books.find((book) => book.id === item.id).price * item.quantity,
+      (total, cartItem) => total + itemPrice(cartItem.id) * cartItem.quantity,
       0
     );
     setCartTotal(amount.toFixed(2));
@@ -67,17 +68,17 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Navbar cart={cart} />
+        <Navbar siteTitle="Fairy Tale Books" cart={cart} />
         <div className="content">
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/shop" element={<Shop books={books} />} />
+            <Route path="/" element={<Home siteTitle="Fairy Tale Books" />} />
+            <Route path="/shop" element={<Shop data={data} />} />
             <Route
               path="/cart"
               element={
                 <Cart
                   cart={cart}
-                  books={books}
+                  data={data}
                   handleAddCartItem={handleAddCartItem}
                   handleSubtractCartItem={handleSubtractCartItem}
                   handleRemoveCartItem={handleRemoveCartItem}
@@ -89,12 +90,13 @@ function App() {
               path="/product/:idNum"
               element={
                 <Product
-                  books={books}
+                  data={data}
                   handleAddCartItem={handleAddCartItem}
                   cart={cart}
                 />
               }
             />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
       </div>
