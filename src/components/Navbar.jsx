@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-function Navbar({ siteTitle, cart }) {
+function Navbar({ siteTitle, totalNumItems }) {
   return (
     <nav className="navbar navbar-expand-sm bg-light">
       <div className="container-fluid">
@@ -27,7 +27,7 @@ function Navbar({ siteTitle, cart }) {
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/cart">
-                Cart {cart.length > 0 && cart.length}
+                Cart {totalNumItems > 0 && totalNumItems}
               </Link>
             </li>
           </ul>

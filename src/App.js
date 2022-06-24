@@ -12,7 +12,8 @@ function App() {
   // Get product data from products.json file and assign to variable 'data'
   const { data } = productsJson;
   const [cart, setCart] = useState([]);
-  const [cartTotal, setCartTotal] = useState(0);
+  const [totalPrice, setTotalPrice] = useState(0);
+  const [totalNumItems, setTotalNumItems] = useState(0);
 
   const handleAddCartItem = (idNum) => {
     const prevCart = [...cart];
@@ -58,17 +59,26 @@ function App() {
       (total, cartItem) => total + itemPrice(cartItem.id) * cartItem.quantity,
       0
     );
-    setCartTotal(amount.toFixed(2));
+    setTotalPrice(amount.toFixed(2));
+  };
+
+  const calculateTotalNumItems = () => {
+    const totalNum = cart.reduce(
+      (total, cartItem) => total + cartItem.quantity,
+      0
+    );
+    setTotalNumItems(totalNum);
   };
 
   useEffect(() => {
     calculateTotalPrice();
+    calculateTotalNumItems();
   }, [cart]);
 
   return (
     <Router>
       <div className="App">
-        <Navbar siteTitle="Fairy Tale Books" cart={cart} />
+        <Navbar siteTitle="Fairy Tale Books" totalNumItems={totalNumItems} />
         <div className="content">
           <Routes>
             <Route path="/" element={<Home siteTitle="Fairy Tale Books" />} />
@@ -82,7 +92,7 @@ function App() {
                   handleAddCartItem={handleAddCartItem}
                   handleSubtractCartItem={handleSubtractCartItem}
                   handleRemoveCartItem={handleRemoveCartItem}
-                  totalPrice={cartTotal}
+                  totalPrice={totalPrice}
                 />
               }
             />
