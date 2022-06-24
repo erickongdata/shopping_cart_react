@@ -3,16 +3,24 @@ import { Link } from 'react-router-dom';
 function Shop({ data }) {
   return (
     <div className="shop">
-      <h1>Shop</h1>
-      {data.map((item) => (
-        <div key={item.id} className="mb-5">
-          <Link to={`/product/${item.id}`}>
-            <p>
-              {item.title} ${item.price}
-            </p>
-          </Link>
+      <div className="container">
+        <h1>Shop</h1>
+        <div className="row h-100">
+          {data.map((item) => (
+            <div key={item.id} className="col-12 col-md-4">
+              <Link
+                to={`/product/${item.id}`}
+                className="text-decoration-none text-dark"
+              >
+                <div className="card h-100">
+                  <p className="lead">{item.title}</p>
+                  <p>${item.price}</p>
+                </div>
+              </Link>
+            </div>
+          ))}
         </div>
-      ))}
+      </div>
     </div>
   );
 }
