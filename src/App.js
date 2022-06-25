@@ -11,63 +11,55 @@ import productsJson from './products.json';
 function App() {
   // Get product data from products.json file and assign to variable 'data'
   const { data } = productsJson;
+  // cart is an array of objects with properties - id, quantity
   const [cart, setCart] = useState([]);
+  // Store and update cart total price and no. of items
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalNumItems, setTotalNumItems] = useState(0);
+  const itemMaxLimit = 99;
 
   const handleAddCartItem = (idNum) => {
-    const prevCart = [...cart];
-    const index = prevCart.findIndex((item) => item.id === idNum);
-    if (index >= 0) {
-      const itemAdded = prevCart[index];
-      if (itemAdded.quantity < 99) {
-        itemAdded.quantity += 1;
-        const newCart = [
-          ...prevCart.slice(0, index),
-          itemAdded,
-          ...prevCart.slice(index + 1),
-        ];
-        setCart(newCart);
+    setCart((currCart) => {
+      if (currCart.findIndex((item) => item.id === idNum) === -1) {
+        return [...currCart, { id: idNum, quantity: 1 }];
       }
-    } else {
-      setCart([...prevCart, { id: idNum, quantity: 1 }]);
-    }
+      return currCart.map((item) => {
+        if (item.id === idNum && item.quantity < itemMaxLimit) {
+          return { ...item, quantity: item.quantity + 1 };
+        }
+        return item;
+      });
+    });
   };
 
   const handleSubtractCartItem = (idNum) => {
-    const prevCart = [...cart];
-    const index = prevCart.findIndex((item) => item.id === idNum);
-    const itemSelected = prevCart[index];
-    if (itemSelected.quantity > 1) {
-      itemSelected.quantity -= 1;
-      const newCart = [
-        ...prevCart.slice(0, index),
-        itemSelected,
-        ...prevCart.slice(index + 1),
-      ];
-      setCart(newCart);
-    }
+    setCart((currCart) =>
+      currCart.map((item) => {
+        if (item.id === idNum && item.quantity > 1) {
+          return { ...item, quantity: item.quantity - 1 };
+        }
+        return item;
+      })
+    );
   };
 
   const handleRemoveCartItem = (idNum) => {
-    const prevCart = [...cart];
-    const newCart = prevCart.filter((item) => item.id !== idNum);
-    setCart(newCart);
+    setCart((currCart) => currCart.filter((item) => item.id !== idNum));
   };
 
   const handleItemNumChange = (idNum, itemQuantity) => {
-    const prevCart = [...cart];
-    const index = prevCart.findIndex((item) => item.id === idNum);
-    const itemSelected = prevCart[index];
-    if (itemQuantity > 0 && itemQuantity <= 99) {
-      itemSelected.quantity = itemQuantity;
-      const newCart = [
-        ...prevCart.slice(0, index),
-        itemSelected,
-        ...prevCart.slice(index + 1),
-      ];
-      setCart(newCart);
-    }
+    setCart((currCart) =>
+      currCart.map((item) => {
+        if (
+          item.id === idNum &&
+          itemQuantity > 0 &&
+          itemQuantity <= itemMaxLimit
+        ) {
+          return { ...item, quantity: itemQuantity };
+        }
+        return item;
+      })
+    );
   };
 
   const calculateTotalPrice = () => {
