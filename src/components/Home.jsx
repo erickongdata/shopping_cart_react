@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 function Home({ siteTitle }) {
   return (
@@ -12,5 +13,9 @@ function Home({ siteTitle }) {
     </div>
   );
 }
+
+Home.propTypes = {
+  siteTitle: PropTypes.string.isRequired,
+};
 
 export default Home;

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 function Navbar({ siteTitle, totalNumItems }) {
   return (
@@ -36,5 +37,10 @@ function Navbar({ siteTitle, totalNumItems }) {
     </nav>
   );
 }
+
+Navbar.propTypes = {
+  siteTitle: PropTypes.string.isRequired,
+  totalNumItems: PropTypes.number.isRequired,
+};
 
 export default Navbar;

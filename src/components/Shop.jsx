@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 function Shop({ data }) {
   return (
@@ -24,5 +25,9 @@ function Shop({ data }) {
     </div>
   );
 }
+
+Shop.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.shape).isRequired,
+};
 
 export default Shop;

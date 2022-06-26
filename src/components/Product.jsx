@@ -1,4 +1,5 @@
 import { useParams } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 function Product({ data, cart, handleAddCartItem }) {
   const { idNum } = useParams();
@@ -22,5 +23,11 @@ function Product({ data, cart, handleAddCartItem }) {
     </div>
   );
 }
+
+Product.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.shape).isRequired,
+  cart: PropTypes.arrayOf(PropTypes.shape).isRequired,
+  handleAddCartItem: PropTypes.func.isRequired,
+};
 
 export default Product;

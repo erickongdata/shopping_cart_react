@@ -95,7 +95,7 @@ function App() {
                   handleSubtractCartItem={handleSubtractCartItem}
                   handleRemoveCartItem={handleRemoveCartItem}
                   handleItemNumChange={handleItemNumChange}
-                  totalPrice={totalPrice}
+                  totalPrice={+totalPrice}
                 />
               }
             />
