@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 function Product({ data, cart, handleAddCartItem }) {
-  const { idNum } = useParams();
+  const { idNum = '1' } = useParams();
   const itemSelected = data.find((item) => item.id === idNum);
   const index = cart.findIndex((item) => item.id === idNum);
   const numInCart = index >= 0 ? cart[index].quantity : 0;
