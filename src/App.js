@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useState, useMemo } from 'react';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Shop from './components/Shop';
@@ -8,14 +8,29 @@ import Product from './components/Product';
 import NotFound from './components/NotFound';
 import productsJson from './products.json';
 
+// Get product data from products.json file
+const { data } = productsJson;
+Object.freeze(data);
+
+const calculateTotalPrice = (productData, cartItems) => {
+  const itemPrice = (id) => productData.find((item) => item.id === id).price;
+  return cartItems
+    .reduce((total, item) => total + itemPrice(item.id) * item.quantity, 0)
+    .toFixed(2);
+};
+
+const calculateTotalNumItems = (cartItems) =>
+  cartItems.reduce((total, item) => total + item.quantity, 0);
+
 function App() {
-  // Get product data from products.json file and assign to variable 'data'
-  const { data } = productsJson;
   // cart is an array of objects with properties - id, quantity
   const [cart, setCart] = useState([]);
   // Store and update cart total price and no. of items
-  const [totalPrice, setTotalPrice] = useState(0);
-  const [totalNumItems, setTotalNumItems] = useState(0);
+  const totalPrice = useMemo(
+    () => calculateTotalPrice(data, cart),
+    [data, cart]
+  );
+  const totalNumItems = useMemo(() => calculateTotalNumItems(cart), [cart]);
   const itemMaxLimit = 99;
 
   const handleAddCartItem = (idNum) => {
@@ -61,28 +76,6 @@ function App() {
       })
     );
   };
-
-  const calculateTotalPrice = () => {
-    const itemPrice = (id) => data.find((item) => item.id === id).price;
-    const amount = cart.reduce(
-      (total, cartItem) => total + itemPrice(cartItem.id) * cartItem.quantity,
-      0
-    );
-    setTotalPrice(amount.toFixed(2));
-  };
-
-  const calculateTotalNumItems = () => {
-    const totalNum = cart.reduce(
-      (total, cartItem) => total + cartItem.quantity,
-      0
-    );
-    setTotalNumItems(totalNum);
-  };
-
-  useEffect(() => {
-    calculateTotalPrice();
-    calculateTotalNumItems();
-  }, [cart]);
 
   return (
     <Router>
