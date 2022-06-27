@@ -17,7 +17,7 @@ MockShop.propTypes = {
 
 describe('rendering data', () => {
   it('renders correctly with one item', () => {
-    const data = [{ title: 'Alice in Wonderland', price: 9.99 }];
+    const data = [{ id: '1', title: 'Alice in Wonderland', price: 9.99 }];
     render(<MockShop data={data} />);
     expect(screen.getByText(/alice in wonderland/i)).toBeInTheDocument();
     expect(screen.getByText(/9.99/i)).toBeInTheDocument();
@@ -25,9 +25,9 @@ describe('rendering data', () => {
 
   it('renders correctly with three items', () => {
     const data = [
-      { title: 'Alice in Wonderland', price: 9.99 },
-      { title: 'Alice in Wonderland', price: 9.99 },
-      { title: 'Alice in Wonderland', price: 9.99 },
+      { id: '1', title: 'Alice in Wonderland', price: 9.99 },
+      { id: '2', title: 'Alice in Wonderland', price: 9.99 },
+      { id: '3', title: 'Alice in Wonderland', price: 9.99 },
     ];
     render(<MockShop data={data} />);
     const elements = screen.getAllByText(/alice in wonderland/i);
