@@ -14,7 +14,7 @@ Object.freeze(data);
 
 const calculateTotalPrice = (productData, cartItems) => {
   const itemPrice = (id) => productData.find((item) => item.id === id).price;
-  return cartItems
+  return +cartItems
     .reduce((total, item) => total + itemPrice(item.id) * item.quantity, 0)
     .toFixed(2);
 };
@@ -95,7 +95,7 @@ function App() {
                   handleSubtractCartItem={handleSubtractCartItem}
                   handleRemoveCartItem={handleRemoveCartItem}
                   handleItemNumChange={handleItemNumChange}
-                  totalPrice={+totalPrice}
+                  totalPrice={totalPrice}
                 />
               }
             />
