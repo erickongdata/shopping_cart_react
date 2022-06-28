@@ -51,7 +51,7 @@ function Cart({
                 type="button"
                 onClick={() => handleRemoveCartItem(item.id)}
               >
-                x
+                Remove
               </button>
             </div>
           ))

@@ -1,13 +1,13 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 function Navbar({ siteTitle, totalNumItems }) {
   return (
     <nav className="navbar navbar-expand-sm bg-light">
       <div className="container-fluid">
-        <Link className="navbar-brand" to="/">
+        <NavLink className="navbar-brand" to="/">
           {siteTitle}
-        </Link>
+        </NavLink>
         <button
           className="navbar-toggler"
           type="button"
@@ -22,14 +22,14 @@ function Navbar({ siteTitle, totalNumItems }) {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link className="nav-link" to="/shop">
+              <NavLink className="nav-link" to="/shop">
                 Shop
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/cart">
+              <NavLink className="nav-link" to="/cart">
                 Cart {totalNumItems > 0 && totalNumItems}
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </div>

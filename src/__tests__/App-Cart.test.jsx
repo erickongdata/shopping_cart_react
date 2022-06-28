@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 import App from '../App';
 
 jest.mock(
-  '../components/Home',
+  '../pages/Home',
   () =>
     function Home() {
       return <div>Home-Page</div>;
@@ -11,7 +11,7 @@ jest.mock(
 );
 
 jest.mock(
-  '../products.json',
+  '../data/products.json',
   () => ({
     data: [
       {
@@ -106,7 +106,7 @@ describe('Cart page functions', () => {
     addItemToCart(1);
     const linkCart = screen.getByRole('link', { name: /cart 1/i });
     userEvent.click(linkCart);
-    const removeBtn = screen.getByRole('button', { name: /x/i });
+    const removeBtn = screen.getByRole('button', { name: /remove/i });
     userEvent.click(removeBtn);
     expect(screen.getByText(/no items to display/i)).toBeInTheDocument();
   });

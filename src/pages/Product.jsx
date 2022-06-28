@@ -6,9 +6,9 @@ function range(start, end) {
 }
 
 function Product({ data, cart, handleSubmitQuantity }) {
-  const { idNum = '1' } = useParams();
-  const itemSelected = data.find((item) => item.id === idNum);
-  const index = cart.findIndex((item) => item.id === idNum);
+  const { productId = '1' } = useParams();
+  const itemSelected = data.find((item) => item.id === productId);
+  const index = cart.findIndex((item) => item.id === productId);
   const numInCart = index >= 0 ? cart[index].quantity : 0;
   const numArr = range(1, 20);
   return (
@@ -18,8 +18,8 @@ function Product({ data, cart, handleSubmitQuantity }) {
         <h2>${itemSelected.price}</h2>
         <h2>{itemSelected.author}</h2>
         <p>{itemSelected.description}</p>
-        <form onSubmit={(e) => handleSubmitQuantity(e, idNum)}>
-          <select data-id={`quant-${idNum}`}>
+        <form onSubmit={(e) => handleSubmitQuantity(e, productId)}>
+          <select data-id={`quant-${productId}`}>
             {numArr.map((el) => (
               <option value={el} key={el}>
                 {el}

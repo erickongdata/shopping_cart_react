@@ -1,12 +1,12 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useState, useMemo } from 'react';
 import Navbar from './components/Navbar';
-import Home from './components/Home';
-import Shop from './components/Shop';
-import Cart from './components/Cart';
-import Product from './components/Product';
-import NotFound from './components/NotFound';
-import productsJson from './products.json';
+import Home from './pages/Home';
+import Shop from './pages/Shop';
+import Cart from './pages/Cart';
+import Product from './pages/Product';
+import NotFound from './pages/NotFound';
+import productsJson from './data/products.json';
 
 // Get product data from products.json file
 const { data } = productsJson;
@@ -34,13 +34,13 @@ function App() {
   const totalNumItems = useMemo(() => calculateTotalNumItems(cart), [cart]);
   const itemMaxLimit = 99;
 
-  const handleAddCartItem = (idNum) => {
+  const handleAddCartItem = (id) => {
     setCart((currCart) => {
-      if (currCart.findIndex((item) => item.id === idNum) === -1) {
-        return [...currCart, { id: idNum, quantity: 1 }];
+      if (currCart.find((item) => item.id === id) === undefined) {
+        return [...currCart, { id, quantity: 1 }];
       }
       return currCart.map((item) => {
-        if (item.id === idNum && item.quantity < itemMaxLimit) {
+        if (item.id === id && item.quantity < itemMaxLimit) {
           return { ...item, quantity: item.quantity + 1 };
         }
         return item;
@@ -48,10 +48,10 @@ function App() {
     });
   };
 
-  const handleSubtractCartItem = (idNum) => {
+  const handleSubtractCartItem = (id) => {
     setCart((currCart) =>
       currCart.map((item) => {
-        if (item.id === idNum && item.quantity > 1) {
+        if (item.id === id && item.quantity > 1) {
           return { ...item, quantity: item.quantity - 1 };
         }
         return item;
@@ -59,15 +59,15 @@ function App() {
     );
   };
 
-  const handleRemoveCartItem = (idNum) => {
-    setCart((currCart) => currCart.filter((item) => item.id !== idNum));
+  const handleRemoveCartItem = (id) => {
+    setCart((currCart) => currCart.filter((item) => item.id !== id));
   };
 
-  const handleItemNumChange = (idNum, itemQuantity) => {
+  const handleItemNumChange = (id, itemQuantity) => {
     setCart((currCart) =>
       currCart.map((item) => {
         if (
-          item.id === idNum &&
+          item.id === id &&
           itemQuantity > 0 &&
           itemQuantity <= itemMaxLimit
         ) {
@@ -78,16 +78,16 @@ function App() {
     );
   };
 
-  const handleSubmitQuantity = (e, idNum) => {
+  const handleSubmitQuantity = (e, id) => {
     e.preventDefault();
-    const dropdown = document.querySelector(`[data-id="quant-${idNum}"]`);
+    const dropdown = document.querySelector(`[data-id="quant-${id}"]`);
     const itemQuantity = +dropdown.value;
     setCart((currCart) => {
-      if (currCart.findIndex((item) => item.id === idNum) === -1) {
-        return [...currCart, { id: idNum, quantity: itemQuantity }];
+      if (currCart.find((item) => item.id === id) === undefined) {
+        return [...currCart, { id, quantity: itemQuantity }];
       }
       return currCart.map((item) => {
-        if (item.id === idNum && item.quantity < itemMaxLimit) {
+        if (item.id === id && item.quantity < itemMaxLimit) {
           return { ...item, quantity: itemQuantity };
         }
         return item;
@@ -96,7 +96,7 @@ function App() {
   };
 
   return (
-    <Router>
+    <BrowserRouter>
       <div className="App">
         <Navbar siteTitle={siteTitle} totalNumItems={totalNumItems} />
         <div className="content">
@@ -118,7 +118,7 @@ function App() {
               }
             />
             <Route
-              path="/product/:idNum"
+              path="/product/:productId"
               element={
                 <Product
                   data={data}
@@ -131,7 +131,7 @@ function App() {
           </Routes>
         </div>
       </div>
-    </Router>
+    </BrowserRouter>
   );
 }
 

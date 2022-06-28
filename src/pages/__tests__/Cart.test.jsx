@@ -1,41 +1,10 @@
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import Cart from '../Cart';
 
-function MockCart({
-  cart,
-  data,
-  handleAddCartItem,
-  handleSubtractCartItem,
-  handleRemoveCartItem,
-  handleItemNumChange,
-  totalPrice,
-}) {
-  return (
-    <BrowserRouter>
-      <Cart
-        cart={cart}
-        data={data}
-        handleAddCartItem={handleAddCartItem}
-        handleSubtractCartItem={handleSubtractCartItem}
-        handleRemoveCartItem={handleRemoveCartItem}
-        handleItemNumChange={handleItemNumChange}
-        totalPrice={totalPrice}
-      />
-    </BrowserRouter>
-  );
+function renderWithRouter(component) {
+  return render(<BrowserRouter>{component}</BrowserRouter>);
 }
-
-MockCart.propTypes = {
-  cart: PropTypes.arrayOf(PropTypes.shape).isRequired,
-  data: PropTypes.arrayOf(PropTypes.shape).isRequired,
-  handleAddCartItem: PropTypes.func.isRequired,
-  handleSubtractCartItem: PropTypes.func.isRequired,
-  handleRemoveCartItem: PropTypes.func.isRequired,
-  handleItemNumChange: PropTypes.func.isRequired,
-  totalPrice: PropTypes.number.isRequired,
-};
 
 describe('rendering data', () => {
   const data = [
@@ -68,8 +37,8 @@ describe('rendering data', () => {
   const handleItemNumChange = jest.fn();
 
   it('renders no items message with empty cart', () => {
-    render(
-      <MockCart
+    renderWithRouter(
+      <Cart
         cart={[]}
         data={data}
         handleAddCartItem={handleAddCartItem}
@@ -83,8 +52,8 @@ describe('rendering data', () => {
   });
 
   it('renders one cart item correctly', () => {
-    render(
-      <MockCart
+    renderWithRouter(
+      <Cart
         cart={[{ id: '2', quantity: 4 }]}
         data={data}
         handleAddCartItem={handleAddCartItem}
@@ -100,8 +69,8 @@ describe('rendering data', () => {
   });
 
   it('renders total price', () => {
-    render(
-      <MockCart
+    renderWithRouter(
+      <Cart
         cart={[]}
         data={data}
         handleAddCartItem={handleAddCartItem}
@@ -115,8 +84,8 @@ describe('rendering data', () => {
   });
 
   it('renders three different cart items correctly', () => {
-    render(
-      <MockCart
+    renderWithRouter(
+      <Cart
         cart={[
           { id: '1', quantity: 1 },
           { id: '2', quantity: 2 },

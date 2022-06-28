@@ -28,7 +28,7 @@ const data = [
 const handleSubmitQuantity = jest.fn();
 
 describe('rendering data', () => {
-  it('renders item with default idNum = 1 correctly', () => {
+  it('renders item with default productId = 1 correctly', () => {
     const cart = [];
     render(
       <Product

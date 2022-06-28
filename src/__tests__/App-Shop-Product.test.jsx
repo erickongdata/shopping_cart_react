@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 import App from '../App';
 
 jest.mock(
-  '../components/Home',
+  '../pages/Home',
   () =>
     function Product() {
       return <div>Home-Page</div>;
@@ -11,7 +11,7 @@ jest.mock(
 );
 
 jest.mock(
-  '../components/Cart',
+  '../pages/Cart',
   () =>
     function Cart() {
       return <div>Cart-Page</div>;
