@@ -25,13 +25,17 @@ const data = [
   },
 ];
 
-const handleAddCartItem = jest.fn();
+const handleSubmitQuantity = jest.fn();
 
 describe('rendering data', () => {
   it('renders item with default idNum = 1 correctly', () => {
     const cart = [];
     render(
-      <Product data={data} handleAddCartItem={handleAddCartItem} cart={cart} />
+      <Product
+        data={data}
+        handleSubmitQuantity={handleSubmitQuantity}
+        cart={cart}
+      />
     );
     expect(screen.getByText(/beauty and the beast/i)).toBeInTheDocument();
     expect(screen.getByText(/Jeanne-Marie/i)).toBeInTheDocument();

@@ -80,7 +80,7 @@ describe('Product page functions', () => {
     expect(screen.getByText(/1 in cart/i)).toBeInTheDocument();
   });
 
-  it('clicking on add to cart 4 times, displays message 4 in cart afterwards', () => {
+  it('adding quantity of 4, displays message 4 in cart afterwards', () => {
     render(<App />);
     const linkShop = screen.getByRole('link', {
       name: /shop/i,
@@ -89,10 +89,10 @@ describe('Product page functions', () => {
     const linkProduct = screen.getByText(/Beauty and the Beast/i);
     expect(linkProduct).toBeInTheDocument();
     userEvent.click(linkProduct);
+    const quantitySelect = screen.getByRole('combobox');
+    userEvent.selectOptions(quantitySelect, '4');
+
     const AddToCartBtn = screen.getByRole('button', { name: /add to cart/i });
-    userEvent.click(AddToCartBtn);
-    userEvent.click(AddToCartBtn);
-    userEvent.click(AddToCartBtn);
     userEvent.click(AddToCartBtn);
     expect(screen.getByText(/4 in cart/i)).toBeInTheDocument();
   });

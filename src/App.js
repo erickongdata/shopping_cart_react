@@ -77,6 +77,23 @@ function App() {
     );
   };
 
+  const handleSubmitQuantity = (e, idNum) => {
+    e.preventDefault();
+    const dropbox = document.querySelector(`[data-id="quant-${idNum}"]`);
+    const itemQuantity = +dropbox.value;
+    setCart((currCart) => {
+      if (currCart.findIndex((item) => item.id === idNum) === -1) {
+        return [...currCart, { id: idNum, quantity: itemQuantity }];
+      }
+      return currCart.map((item) => {
+        if (item.id === idNum && item.quantity < itemMaxLimit) {
+          return { ...item, quantity: itemQuantity };
+        }
+        return item;
+      });
+    });
+  };
+
   return (
     <Router>
       <div className="App">
@@ -104,7 +121,7 @@ function App() {
               element={
                 <Product
                   data={data}
-                  handleAddCartItem={handleAddCartItem}
+                  handleSubmitQuantity={handleSubmitQuantity}
                   cart={cart}
                 />
               }

@@ -48,10 +48,10 @@ function addItemToCart(itemQuantity) {
   userEvent.click(linkShop);
   const linkProduct = screen.getByText(/Beauty and the Beast/i);
   userEvent.click(linkProduct);
+  const quantitySelect = screen.getByRole('combobox');
+  userEvent.selectOptions(quantitySelect, itemQuantity.toString());
   const AddToCartBtn = screen.getByRole('button', { name: /add to cart/i });
-  for (let i = 0; i < itemQuantity; i += 1) {
-    userEvent.click(AddToCartBtn);
-  }
+  userEvent.click(AddToCartBtn);
 }
 
 function addTwoItemsToCart() {
