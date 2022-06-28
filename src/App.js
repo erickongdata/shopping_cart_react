@@ -23,6 +23,7 @@ const calculateTotalNumItems = (cartItems) =>
   cartItems.reduce((total, item) => total + item.quantity, 0);
 
 function App() {
+  const siteTitle = 'Fairy Tale Books';
   // cart is an array of objects with properties - id, quantity
   const [cart, setCart] = useState([]);
   // Store and update cart total price and no. of items
@@ -79,8 +80,8 @@ function App() {
 
   const handleSubmitQuantity = (e, idNum) => {
     e.preventDefault();
-    const dropbox = document.querySelector(`[data-id="quant-${idNum}"]`);
-    const itemQuantity = +dropbox.value;
+    const dropdown = document.querySelector(`[data-id="quant-${idNum}"]`);
+    const itemQuantity = +dropdown.value;
     setCart((currCart) => {
       if (currCart.findIndex((item) => item.id === idNum) === -1) {
         return [...currCart, { id: idNum, quantity: itemQuantity }];
@@ -97,10 +98,10 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Navbar siteTitle="Fairy Tale Books" totalNumItems={totalNumItems} />
+        <Navbar siteTitle={siteTitle} totalNumItems={totalNumItems} />
         <div className="content">
           <Routes>
-            <Route path="/" element={<Home siteTitle="Fairy Tale Books" />} />
+            <Route path="/" element={<Home siteTitle={siteTitle} />} />
             <Route path="/shop" element={<Shop data={data} />} />
             <Route
               path="/cart"
