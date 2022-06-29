@@ -1,11 +1,13 @@
+import { useContext } from 'react';
 import { useParams } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import { AppContext } from '../AppContext';
 
 function range(start, end) {
   return Array.from({ length: end - start + 1 }, (_, i) => start + i);
 }
 
-function Product({ data, cart, handleSubmitQuantity }) {
+function Product() {
+  const { data, cart, handleSubmitQuantity } = useContext(AppContext);
   const { productId = '1' } = useParams();
   const itemSelected = data.find((item) => item.id === productId);
   const index = cart.findIndex((item) => item.id === productId);
@@ -35,11 +37,5 @@ function Product({ data, cart, handleSubmitQuantity }) {
     </div>
   );
 }
-
-Product.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.shape).isRequired,
-  cart: PropTypes.arrayOf(PropTypes.shape).isRequired,
-  handleSubmitQuantity: PropTypes.func.isRequired,
-};
 
 export default Product;

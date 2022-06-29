@@ -1,7 +1,9 @@
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import { AppContext } from '../AppContext';
 
-function Home({ siteTitle }) {
+function Home() {
+  const { siteTitle } = useContext(AppContext);
   return (
     <div className="home">
       <div className="container">
@@ -13,9 +15,5 @@ function Home({ siteTitle }) {
     </div>
   );
 }
-
-Home.propTypes = {
-  siteTitle: PropTypes.string.isRequired,
-};
 
 export default Home;

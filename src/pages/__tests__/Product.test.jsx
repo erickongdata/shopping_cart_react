@@ -1,5 +1,7 @@
 import { render, screen } from '@testing-library/react';
+import { useMemo } from 'react';
 import Product from '../Product';
+import { AppContext } from '../../AppContext';
 
 const data = [
   {
@@ -25,18 +27,25 @@ const data = [
   },
 ];
 
-const handleSubmitQuantity = jest.fn();
+function ProductContext() {
+  const context = useMemo(
+    () => ({
+      cart: [],
+      data,
+      handleSubmitQuantity: jest.fn,
+    }),
+    []
+  );
+  return (
+    <AppContext.Provider value={context}>
+      <Product />
+    </AppContext.Provider>
+  );
+}
 
 describe('rendering data', () => {
   it('renders item with default productId = 1 correctly', () => {
-    const cart = [];
-    render(
-      <Product
-        data={data}
-        handleSubmitQuantity={handleSubmitQuantity}
-        cart={cart}
-      />
-    );
+    render(<ProductContext />);
     expect(screen.getByText(/beauty and the beast/i)).toBeInTheDocument();
     expect(screen.getByText(/Jeanne-Marie/i)).toBeInTheDocument();
     expect(screen.getByText(/12\.99/i)).toBeInTheDocument();

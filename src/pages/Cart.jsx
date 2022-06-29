@@ -1,15 +1,17 @@
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import { AppContext } from '../AppContext';
 
-function Cart({
-  cart,
-  data,
-  handleAddCartItem,
-  handleSubtractCartItem,
-  handleRemoveCartItem,
-  handleItemNumChange,
-  totalPrice,
-}) {
+function Cart() {
+  const {
+    cart,
+    data,
+    handleAddCartItem,
+    handleSubtractCartItem,
+    handleRemoveCartItem,
+    handleItemNumChange,
+    totalPrice,
+  } = useContext(AppContext);
   // Get item data from json data file
   const itemSelected = (id) => data.find((item) => item.id === id);
 
@@ -61,15 +63,5 @@ function Cart({
     </div>
   );
 }
-
-Cart.propTypes = {
-  cart: PropTypes.arrayOf(PropTypes.shape).isRequired,
-  data: PropTypes.arrayOf(PropTypes.shape).isRequired,
-  handleAddCartItem: PropTypes.func.isRequired,
-  handleSubtractCartItem: PropTypes.func.isRequired,
-  handleRemoveCartItem: PropTypes.func.isRequired,
-  handleItemNumChange: PropTypes.func.isRequired,
-  totalPrice: PropTypes.number.isRequired,
-};
 
 export default Cart;

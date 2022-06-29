@@ -1,7 +1,9 @@
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import { AppContext } from '../AppContext';
 
-function Shop({ data }) {
+function Shop() {
+  const { data } = useContext(AppContext);
   return (
     <div className="shop">
       <div className="container">
@@ -25,9 +27,5 @@ function Shop({ data }) {
     </div>
   );
 }
-
-Shop.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.shape).isRequired,
-};
 
 export default Shop;

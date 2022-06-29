@@ -1,7 +1,9 @@
+import { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import { AppContext } from '../AppContext';
 
-function Navbar({ siteTitle, totalNumItems }) {
+function Navbar() {
+  const { siteTitle, totalNumItems } = useContext(AppContext);
   return (
     <nav className="navbar navbar-expand-sm bg-light">
       <div className="container-fluid">
@@ -37,10 +39,5 @@ function Navbar({ siteTitle, totalNumItems }) {
     </nav>
   );
 }
-
-Navbar.propTypes = {
-  siteTitle: PropTypes.string.isRequired,
-  totalNumItems: PropTypes.number.isRequired,
-};
 
 export default Navbar;
