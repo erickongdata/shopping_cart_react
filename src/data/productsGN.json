@@ -1,0 +1,40 @@
+{
+  "data": [
+    {
+      "id": "GN1",
+      "title": "Instax Instant camera",
+      "price": 65.50,
+      "description": "Hold camera steady when shooting, do not expose film to direct sunlight, do not shoot pictures into the sun, check use by date of film."
+    },
+    {
+      "id": "GN2",
+      "title": "Womens Warm Faux Fur Coat Jacket",
+      "price": 69.00,
+      "description": "Fresh off the rack fashion. Hand Wash Only."
+    },
+    {
+      "id": "GN3",
+      "title": "Glass Jar",
+      "price": 5.99,
+      "description": "Fill your jar with your imagination. Plants not included."
+    },
+    {
+      "id": "GN4",
+      "title": "Lizard",
+      "price": 87.00,
+      "description": "Possibly a chameleon. Origin: Madagascar."
+    },
+    {
+      "id": "GN5",
+      "title": "Nail Polish - Green",
+      "price": 3.99,
+      "description": "Quick drying — ready to go in under 60 seconds! Ingredients: Butyl Acetate, Ethyl Acetate, Nitrocellulose, Acetyl Tributyl Citrate, Isopropyl Alcohol, Tosylamide/epoxy Resin, Styrene/acrylates Copolymer, Stearalkonium Bentonite, Silica, Triphenyl Phosphate, Adipic Acid/neopentyl Glycol/trimellitic Anhydride Copolymer, Aqua/water/eau, Diacetone Alcohol, Etocrylene, Kaolin, Glycidyl Neodecanoate/phthalic Anhydride/tmp Crosspolymer, Mek, Synthetic Fluorphlogopite, Corallina Officinalis Extract, Acrylates/dimethicone Copolymer."
+    },
+    {
+      "id": "GN6",
+      "title": "Canvas Print",
+      "price": 17.00,
+      "description": "High-quality canvas and durable. Artist - Caesar Po."
+    }
+  ]
+}

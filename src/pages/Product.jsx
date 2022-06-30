@@ -18,7 +18,6 @@ function Product() {
       <div className="container">
         <h1>{itemSelected.title}</h1>
         <h2>${itemSelected.price}</h2>
-        <h2>{itemSelected.author}</h2>
         <p>{itemSelected.description}</p>
         <form onSubmit={(e) => handleSubmitQuantity(e, productId)}>
           <select data-id={`quant-${productId}`}>
