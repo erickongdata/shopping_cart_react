@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AppContext } from '../AppContext';
+import toGBP from '../utilities/formatCurrency';
 
 function Cart() {
   const {
@@ -25,13 +26,13 @@ function Cart() {
           cart.map((item) => (
             <div key={item.id} className="mb-5">
               <Link to={`/product/${item.id}`} className="lead text-dark">
-                <h3>
+                <h5>
                   {itemSelected(item.id).title}, id: {item.id}
-                </h3>
+                </h5>
               </Link>
               <p className="text-secondary">
-                quantity: {item.quantity}, price: £
-                {(itemSelected(item.id).price * item.quantity).toFixed(2)}
+                quantity: {item.quantity}, price:{' '}
+                {toGBP(itemSelected(item.id).price * item.quantity)}
               </p>
               <button
                 type="button"
@@ -58,7 +59,7 @@ function Cart() {
             </div>
           ))
         )}
-        <h2>Total: £{totalPrice}</h2>
+        <h2>Total: {toGBP(totalPrice)}</h2>
       </div>
     </div>
   );

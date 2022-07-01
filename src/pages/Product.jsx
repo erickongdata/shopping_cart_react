@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { AppContext } from '../AppContext';
+import toGBP from '../utilities/formatCurrency';
 
 function range(start, end) {
   return Array.from({ length: end - start + 1 }, (_, i) => start + i);
@@ -17,7 +18,7 @@ function Product() {
     <div className="product">
       <div className="container">
         <h1>{itemSelected.title}</h1>
-        <h2>£{itemSelected.price.toFixed(2)}</h2>
+        <h2>{toGBP(itemSelected.price)}</h2>
         <p>{itemSelected.description}</p>
         <form onSubmit={(e) => handleSubmitQuantity(e, productId)}>
           <select data-id={`quant-${productId}`}>

@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AppContext } from '../AppContext';
+import toGBP from '../utilities/formatCurrency';
 
 function Shop() {
   const { data } = useContext(AppContext);
@@ -30,7 +31,7 @@ function Shop() {
                     style={{ height: '80px' }}
                   >
                     <h6 className="card-title pe-4">{item.title}</h6>
-                    <p>£{item.price.toFixed(2)}</p>
+                    <p>{toGBP(item.price)}</p>
                   </div>
                 </div>
               </Link>
