@@ -36,7 +36,7 @@ function Product() {
             </div>
           </form>
           <p className="text-success">
-            {numInCart > 0 && `${numInCart} in Cart`}
+            {numInCart > 0 && `${numInCart} in Basket`}
           </p>
         </div>
         <img

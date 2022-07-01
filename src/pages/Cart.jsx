@@ -21,29 +21,25 @@ function Cart() {
     <div className="cart">
       <div className="container">
         <div className="pt-4 pb-5">
-          <h1>Basket {`(${totalNumItems} items)`}</h1>
-          <h2>Total: {toGBP(totalPrice)}</h2>
           {cart.length === 0 ? (
             <p>No items to display</p>
           ) : (
             cart.map((item) => (
               <div key={item.id} className="border mb-3 rounded">
-                <div className="d-flex">
-                  <div>
-                    <Link to={`/product/${item.id}`}>
-                      <img
-                        className="me-3"
-                        src={itemSelected(item.id).src}
-                        alt={itemSelected(item.id).title}
-                        style={{
-                          height: '160px',
-                          width: '160px',
-                          objectFit: 'cover',
-                        }}
-                      />
-                    </Link>
-                  </div>
-                  <div>
+                <div className="d-sm-flex">
+                  <Link to={`/product/${item.id}`}>
+                    <img
+                      className="me-3"
+                      src={itemSelected(item.id).src}
+                      alt={itemSelected(item.id).title}
+                      style={{
+                        height: '160px',
+                        width: '160px',
+                        objectFit: 'cover',
+                      }}
+                    />
+                  </Link>
+                  <div className="p-1">
                     <Link to={`/product/${item.id}`} className="lead text-dark">
                       <h5>{itemSelected(item.id).title}</h5>
                     </Link>
@@ -89,9 +85,19 @@ function Cart() {
               </div>
             ))
           )}
-          <button type="button" className="btn btn-success btn-lg">
-            Checkout
-          </button>
+        </div>
+        <div className="row justify-content-between bg-light border fixed-bottom px-5 py-3">
+          <h3 className="col-12 col-md-5">
+            Basket {`(${totalNumItems} items)`}
+          </h3>
+          <h3 className="text-muted col-6 col-md-5 text-end">
+            Total: {toGBP(totalPrice)}
+          </h3>
+          <div className="col-6 col-md-2 d-flex justify-content-end">
+            <button type="button" className="btn btn-success">
+              Checkout
+            </button>
+          </div>
         </div>
       </div>
     </div>
