@@ -7,7 +7,7 @@ function Shop() {
   const { data } = useContext(AppContext);
   return (
     <div className="shop">
-      <div className="container-lg">
+      <div className="container">
         <h1>Shop</h1>
         <div className="row gy-4 gx-4">
           {data.map((item) => (
