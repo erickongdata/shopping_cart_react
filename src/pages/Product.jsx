@@ -17,7 +17,7 @@ function Product() {
     <div className="product">
       <div className="container">
         <h1>{itemSelected.title}</h1>
-        <h2>${itemSelected.price}</h2>
+        <h2>£{itemSelected.price.toFixed(2)}</h2>
         <p>{itemSelected.description}</p>
         <form onSubmit={(e) => handleSubmitQuantity(e, productId)}>
           <select data-id={`quant-${productId}`}>
@@ -32,6 +32,11 @@ function Product() {
         <p className="text-success">
           {numInCart > 0 && `${numInCart} in Cart`}
         </p>
+        <img
+          src={itemSelected.src}
+          alt={itemSelected.title}
+          style={{ height: '400px', width: 'auto' }}
+        />
       </div>
     </div>
   );

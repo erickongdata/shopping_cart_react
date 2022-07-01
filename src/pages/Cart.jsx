@@ -30,7 +30,7 @@ function Cart() {
                 </h3>
               </Link>
               <p className="text-secondary">
-                quantity: {item.quantity}, price: $
+                quantity: {item.quantity}, price: £
                 {(itemSelected(item.id).price * item.quantity).toFixed(2)}
               </p>
               <button
@@ -58,7 +58,7 @@ function Cart() {
             </div>
           ))
         )}
-        <h2>Total: ${totalPrice}</h2>
+        <h2>Total: £{totalPrice}</h2>
       </div>
     </div>
   );

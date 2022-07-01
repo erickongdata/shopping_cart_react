@@ -1,9 +1,7 @@
 import { createContext, useState, useMemo } from 'react';
 import PropTypes from 'prop-types';
-import productsJson from './data/products.json';
+import data from './data/products';
 
-// Get product data from products.json file
-const { data } = productsJson;
 Object.freeze(data);
 
 const calculateTotalPrice = (productData, cartItems) => {
@@ -19,7 +17,7 @@ const calculateTotalNumItems = (cartItems) =>
 export const AppContext = createContext();
 
 export function AppProvider({ children }) {
-  const siteTitle = 'Fairy Tale Books';
+  const siteTitle = 'All Things Colour';
   // cart is an array of objects with properties - id, quantity
   const [cart, setCart] = useState([]);
   // Store and update cart total price and no. of items
