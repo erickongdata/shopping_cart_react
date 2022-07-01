@@ -31,7 +31,7 @@ function Product() {
                 ))}
               </select>
               <button type="submit" className="btn btn-secondary">
-                Add to cart
+                Add to Basket
               </button>
             </div>
           </form>
