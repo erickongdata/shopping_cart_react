@@ -1,0 +1,52 @@
+{
+  "data": [
+    {
+      "id": "YE1",
+      "title": "Emoji Storage Tin",
+      "price": 8.99,
+      "description": "Includes two free emoji soft toys.",
+      "src": "/images/yellow/emoji.jpg",
+      "category": "yellow"
+    },
+    {
+      "id": "YE2",
+      "title": "Sunglasses 47mm Yellow",
+      "price": 14.99,
+      "description": "Yellow is the colour of the summer. These cat eye sunglasses are sure to grab everyone's attention.",
+      "src": "/images/yellow/glasses.jpg",
+      "category": "yellow"
+    },
+    {
+      "id": "YE3",
+      "title": "Men's Genuine Lambskin Leather Jacket",
+      "price": 125.99,
+      "description": "Its classy features make it an item that is irresistible and trendy. First class stitching all the way through.",
+      "src": "/images/yellow/jacket.jpg",
+      "category": "yellow"
+    },
+    {
+      "id": "YE4",
+      "title": "Giant Rubber Duck - 22feet",
+      "price": 32290.00,
+      "description": "This giant yellow duck is an exact replica of the little fellows you probably played with in the bath as a youngster!",
+      "src": "/images/yellow/rubber-duck.jpg",
+      "category": "yellow"
+    },
+    {
+      "id": "YE5",
+      "title": "Teaching Stethoscope",
+      "price": 48.99,
+      "description": "Outstanding acoustic performance with rugged durability.",
+      "src": "/images/yellow/stethoscope.jpg",
+      "category": "yellow"
+    },
+    {
+      "id": "YE6",
+      "title": "Retro TV 14-inch",
+      "price": 48.99,
+      "description": "Watch all your favourite TV programs on this vintage set.",
+      "src": "/images/yellow/tv.jpg",
+      "category": "yellow"
+    }
+  ]
+}

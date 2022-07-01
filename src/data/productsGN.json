@@ -4,37 +4,49 @@
       "id": "GN1",
       "title": "Instax Instant camera",
       "price": 65.50,
-      "description": "Hold camera steady when shooting, do not expose film to direct sunlight, do not shoot pictures into the sun, check use by date of film."
+      "description": "Hold camera steady when shooting, do not expose film to direct sunlight, do not shoot pictures into the sun, check use by date of film.",
+      "src": "/images/green/camera.jpg",
+      "category": "green"
     },
     {
       "id": "GN2",
       "title": "Womens Warm Faux Fur Coat Jacket",
       "price": 69.00,
-      "description": "Fresh off the rack fashion. Hand Wash Only."
+      "description": "Fresh off the rack fashion. Hand Wash Only.",
+      "src": "/images/green/furcoat.jpg",
+      "category": "green"
     },
     {
       "id": "GN3",
       "title": "Glass Jar",
       "price": 5.99,
-      "description": "Fill your jar with your imagination. Plants not included."
+      "description": "Fill your jar with your imagination. Plants not included.",
+      "src": "/images/green/jar.jpg",
+      "category": "green"
     },
     {
       "id": "GN4",
       "title": "Lizard",
       "price": 87.00,
-      "description": "Possibly a chameleon. Origin: Madagascar."
+      "description": "Possibly a chameleon. Origin: Madagascar.",
+      "src": "/images/green/lizard.jpg",
+      "category": "green"
     },
     {
       "id": "GN5",
       "title": "Nail Polish - Green",
       "price": 3.99,
-      "description": "Quick drying — ready to go in under 60 seconds! Ingredients: Butyl Acetate, Ethyl Acetate, Nitrocellulose, Acetyl Tributyl Citrate, Isopropyl Alcohol, Tosylamide/epoxy Resin, Styrene/acrylates Copolymer, Stearalkonium Bentonite, Silica, Triphenyl Phosphate, Adipic Acid/neopentyl Glycol/trimellitic Anhydride Copolymer, Aqua/water/eau, Diacetone Alcohol, Etocrylene, Kaolin, Glycidyl Neodecanoate/phthalic Anhydride/tmp Crosspolymer, Mek, Synthetic Fluorphlogopite, Corallina Officinalis Extract, Acrylates/dimethicone Copolymer."
+      "description": "Quick drying — ready to go in under 60 seconds! Ingredients: Butyl Acetate, Ethyl Acetate, Nitrocellulose, Acetyl Tributyl Citrate, Isopropyl Alcohol, Tosylamide/epoxy Resin, Styrene/acrylates Copolymer, Stearalkonium Bentonite, Silica, Triphenyl Phosphate, Adipic Acid/neopentyl Glycol/trimellitic Anhydride Copolymer, Aqua/water/eau, Diacetone Alcohol, Etocrylene, Kaolin, Glycidyl Neodecanoate/phthalic Anhydride/tmp Crosspolymer, Mek, Synthetic Fluorphlogopite, Corallina Officinalis Extract, Acrylates/dimethicone Copolymer.",
+      "src": "/images/green/nail-polish.jpg",
+      "category": "green"
     },
     {
       "id": "GN6",
-      "title": "Canvas Print",
+      "title": "Leaf Canvas Print",
       "price": 17.00,
-      "description": "High-quality canvas and durable. Artist - Caesar Po."
+      "description": "High-quality canvas and durable. Artist - Caesar Po.",
+      "src": "/images/green/painting.jpg",
+      "category": "green"
     }
   ]
 }
