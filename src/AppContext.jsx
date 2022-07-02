@@ -1,18 +1,12 @@
 import { createContext, useState, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import data from './data/products';
+import {
+  calculateTotalNumItems,
+  calculateTotalPrice,
+} from './utilities/calculateTotal';
 
 Object.freeze(data);
-
-const calculateTotalPrice = (productData, cartItems) => {
-  const itemPrice = (id) => productData.find((item) => item.id === id).price;
-  return +cartItems
-    .reduce((total, item) => total + itemPrice(item.id) * item.quantity, 0)
-    .toFixed(2);
-};
-
-const calculateTotalNumItems = (cartItems) =>
-  cartItems.reduce((total, item) => total + item.quantity, 0);
 
 export const AppContext = createContext();
 
@@ -20,6 +14,8 @@ export function AppProvider({ children }) {
   const siteTitle = 'All Things Colour';
   // cart is an array of objects with properties - id, quantity
   const [cart, setCart] = useState([]);
+  const [category, setCategory] = useState('all');
+  const [sorting, setSorting] = useState({ alpha: '', price: '' });
   // Store and update cart total price and no. of items
   const totalPrice = useMemo(
     () => calculateTotalPrice(data, cart),
@@ -101,8 +97,12 @@ export function AppProvider({ children }) {
       handleRemoveCartItem,
       handleItemNumChange,
       handleSubmitQuantity,
+      category,
+      setCategory,
+      sorting,
+      setSorting,
     }),
-    [cart]
+    [cart, category, sorting]
   );
 
   return <AppContext.Provider value={context}>{children}</AppContext.Provider>;
