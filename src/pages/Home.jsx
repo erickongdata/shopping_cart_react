@@ -7,10 +7,12 @@ function Home() {
   return (
     <div className="home">
       <div className="container">
-        <h1>{siteTitle}</h1>
-        <Link to="/shop" className="btn btn-primary">
-          Shop Now
-        </Link>
+        <div className="py-6">
+          <h1>{siteTitle}</h1>
+          <Link to="/shop" className="btn btn-primary">
+            Shop Now
+          </Link>
+        </div>
       </div>
     </div>
   );

@@ -17,33 +17,36 @@ function Product() {
   return (
     <div className="product">
       <div className="container">
-        <h1>{itemSelected.title}</h1>
-        <h2>{toGBP(itemSelected.price)}</h2>
-        <p>{itemSelected.description}</p>
-        <div style={{ height: '5rem' }}>
-          <form onSubmit={(e) => handleSubmitQuantity(e, productId)}>
-            <div className="d-flex">
-              <select data-id={`quant-${productId}`} className="me-1 rounded">
-                {numArr.map((el) => (
-                  <option value={el} key={el} style={{ fontSize: '1.25rem' }}>
-                    {el}
-                  </option>
-                ))}
-              </select>
-              <button type="submit" className="btn btn-secondary">
-                Add to Basket
-              </button>
-            </div>
-          </form>
-          <p className="text-success">
-            {numInCart > 0 && `${numInCart} in Basket`}
-          </p>
+        <div className="py-6">
+          <h1>{itemSelected.title}</h1>
+          <h2>{toGBP(itemSelected.price)}</h2>
+          <p className="lead">Product code: {itemSelected.id}</p>
+          <p>{itemSelected.description}</p>
+          <div style={{ height: '5rem' }}>
+            <form onSubmit={(e) => handleSubmitQuantity(e, productId)}>
+              <div className="d-flex">
+                <select data-id={`quant-${productId}`} className="me-1 rounded">
+                  {numArr.map((el) => (
+                    <option value={el} key={el} style={{ fontSize: '1.25rem' }}>
+                      {el}
+                    </option>
+                  ))}
+                </select>
+                <button type="submit" className="btn btn-secondary">
+                  Add to Basket
+                </button>
+              </div>
+            </form>
+            <p className="text-success">
+              {numInCart > 0 && `${numInCart} in Basket`}
+            </p>
+          </div>
+          <img
+            src={itemSelected.src}
+            alt={itemSelected.title}
+            style={{ maxHeight: '400px', width: 'auto', maxWidth: '100%' }}
+          />
         </div>
-        <img
-          src={itemSelected.src}
-          alt={itemSelected.title}
-          style={{ maxHeight: '400px', width: 'auto', maxWidth: '100%' }}
-        />
       </div>
     </div>
   );

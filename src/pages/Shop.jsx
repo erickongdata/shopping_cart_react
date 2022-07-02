@@ -13,39 +13,39 @@ function Shop() {
   return (
     <div className="shop">
       <div className="container">
-        <div className="pb-5">
+        <div className="py-6">
           <div className="my-3">
             <button
               type="button"
-              className="btn btn-light mx-1"
+              className="btn btn-light mx-1 my-1"
               onClick={() => setCategory('all')}
             >
               All
             </button>
             <button
               type="button"
-              className="btn btn-light mx-1"
+              className="btn btn-light mx-1 my-1"
               onClick={() => setSorting({ alpha: 'az', price: '' })}
             >
               A-Z
             </button>
             <button
               type="button"
-              className="btn btn-light mx-1"
+              className="btn btn-light mx-1 my-1"
               onClick={() => setSorting({ alpha: 'za', price: '' })}
             >
               Z-A
             </button>
             <button
               type="button"
-              className="btn btn-light mx-1"
+              className="btn btn-light mx-1 my-1"
               onClick={() => setSorting({ alpha: '', price: 'lh' })}
             >
               £ low
             </button>
             <button
               type="button"
-              className="btn btn-light mx-1"
+              className="btn btn-light mx-1 my-1"
               onClick={() => setSorting({ alpha: '', price: 'hl' })}
             >
               £ high
@@ -54,7 +54,7 @@ function Shop() {
               <button
                 type="button"
                 key={cat}
-                className="btn btn-light mx-1 text-capitalize"
+                className="btn btn-light mx-1 my-1 text-capitalize"
                 onClick={() => setCategory(cat)}
               >
                 {cat}

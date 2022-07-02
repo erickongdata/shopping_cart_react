@@ -5,7 +5,7 @@ import { AppContext } from '../AppContext';
 function Navbar() {
   const { siteTitle, totalNumItems } = useContext(AppContext);
   return (
-    <div className="row bg-light sticky-top justify-content-center">
+    <div className="row bg-light fixed-top justify-content-center">
       <nav className="navbar navbar-expand-sm bg-light p-3 col-9">
         <div className="container-fluid">
           <NavLink className="navbar-brand" to="/">

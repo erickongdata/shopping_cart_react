@@ -20,9 +20,9 @@ function Cart() {
   return (
     <div className="cart">
       <div className="container">
-        <div className="pt-4 pb-6">
+        <div className="py-6">
           {cart.length === 0 ? (
-            <p>No items to display</p>
+            <h1>No items to display</h1>
           ) : (
             cart.map((item) => (
               <div key={item.id} className="border mb-3 rounded">
