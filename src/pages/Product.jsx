@@ -2,10 +2,7 @@ import { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { AppContext } from '../AppContext';
 import toGBP from '../utilities/formatCurrency';
-
-function range(start, end) {
-  return Array.from({ length: end - start + 1 }, (_, i) => start + i);
-}
+import range from '../utilities/arrayFunctions';
 
 function Product() {
   const { data, cart, handleSubmitQuantity } = useContext(AppContext);
