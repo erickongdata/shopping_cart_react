@@ -20,7 +20,7 @@ function Cart() {
   return (
     <div className="cart">
       <div className="container">
-        <div className="pt-4 pb-5">
+        <div className="pt-4 pb-6">
           {cart.length === 0 ? (
             <p>No items to display</p>
           ) : (
