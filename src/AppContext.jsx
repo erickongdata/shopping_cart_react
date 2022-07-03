@@ -70,7 +70,7 @@ export function AppProvider({ children }) {
 
   const handleSubmitQuantity = (e, id) => {
     e.preventDefault();
-    const dropdown = document.querySelector(`[data-id="quant-${id}"]`);
+    const dropdown = document.querySelector(`[data-id="quant-${id}"]`); // change to useRef later
     const itemQuantity = +dropdown.value;
     setCart((currCart) => {
       if (currCart.find((item) => item.id === id) === undefined) {

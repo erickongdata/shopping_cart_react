@@ -87,9 +87,7 @@ function Cart() {
           )}
         </div>
         <div className="row justify-content-between bg-light border fixed-bottom px-5 py-3">
-          <h3 className="col-12 col-md-5">
-            Basket {`(${totalNumItems} items)`}
-          </h3>
+          <h3 className="col-12 col-md-5">Cart {`(${totalNumItems} items)`}</h3>
           <h3 className="text-muted col-6 col-md-5 text-end">
             Total: {toGBP(totalPrice)}
           </h3>

@@ -19,6 +19,7 @@ function Shop() {
               type="button"
               className="btn btn-light mx-1 my-1"
               onClick={() => setCategory('all')}
+              style={{ boxShadow: `0px 1px 3px grey ` }}
             >
               All
             </button>
@@ -26,6 +27,7 @@ function Shop() {
               type="button"
               className="btn btn-light mx-1 my-1"
               onClick={() => setSorting({ alpha: 'az', price: '' })}
+              style={{ boxShadow: `0px 1px 3px grey ` }}
             >
               A-Z
             </button>
@@ -33,6 +35,7 @@ function Shop() {
               type="button"
               className="btn btn-light mx-1 my-1"
               onClick={() => setSorting({ alpha: 'za', price: '' })}
+              style={{ boxShadow: `0px 1px 3px grey ` }}
             >
               Z-A
             </button>
@@ -40,6 +43,7 @@ function Shop() {
               type="button"
               className="btn btn-light mx-1 my-1"
               onClick={() => setSorting({ alpha: '', price: 'lh' })}
+              style={{ boxShadow: `0px 1px 3px grey ` }}
             >
               £ low
             </button>
@@ -47,15 +51,17 @@ function Shop() {
               type="button"
               className="btn btn-light mx-1 my-1"
               onClick={() => setSorting({ alpha: '', price: 'hl' })}
+              style={{ boxShadow: `0px 1px 3px grey ` }}
             >
               £ high
             </button>
             {categories.map((cat) => (
               <button
                 type="button"
-                key={cat}
+                key={`cat-${cat}`}
                 className="btn btn-light mx-1 my-1 text-capitalize"
                 onClick={() => setCategory(cat)}
+                style={{ boxShadow: `0px 1px 3px ${cat} ` }}
               >
                 {cat}
               </button>

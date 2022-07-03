@@ -34,6 +34,14 @@ jest.mock(
     }
 );
 
+jest.mock(
+  '../utilities/scrollToTop',
+  () =>
+    function scrollToTop({ children }) {
+      return <div>{children}</div>;
+    }
+);
+
 describe('testing routing with Navbar', () => {
   it('starts on Home page', () => {
     render(<App />);
@@ -42,9 +50,7 @@ describe('testing routing with Navbar', () => {
 
   it('go to Cart page works', () => {
     render(<App />);
-    const link = screen.getByRole('link', {
-      name: /cart/i,
-    });
+    const link = screen.getByTestId('cart');
     userEvent.click(link);
     expect(screen.getByText(/Cart-Page/i)).toBeInTheDocument();
   });
@@ -66,7 +72,7 @@ describe('testing routing with Navbar', () => {
     userEvent.click(link);
     expect(screen.getByText(/Shop-Page/i)).toBeInTheDocument();
     const linkHome = screen.getByRole('link', {
-      name: /fairy tale books/i,
+      name: /all things colour/i,
     });
     userEvent.click(linkHome);
     expect(screen.getByText(/Home-Page/i)).toBeInTheDocument();

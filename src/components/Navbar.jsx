@@ -40,7 +40,11 @@ function Navbar() {
       </nav>
       <div className="col-2 py-3 d-flex bg-light justify-content-end">
         <NavLink to="/cart">
-          <button type="button" className="btn btn-light position-relative">
+          <button
+            type="button"
+            className="btn btn-light position-relative"
+            data-testid="cart"
+          >
             <img
               src="./icons/cart.svg"
               alt=""

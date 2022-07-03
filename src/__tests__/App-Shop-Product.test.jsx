@@ -3,6 +3,14 @@ import userEvent from '@testing-library/user-event';
 import App from '../App';
 
 jest.mock(
+  '../utilities/scrollToTop',
+  () =>
+    function scrollToTop({ children }) {
+      return <div>{children}</div>;
+    }
+);
+
+jest.mock(
   '../pages/Home',
   () =>
     function Product() {
@@ -18,36 +26,33 @@ jest.mock(
     }
 );
 
-jest.mock(
-  '../products.json',
-  () => ({
-    data: [
-      {
-        id: '1',
-        title: 'Beauty and the Beast',
-        author: 'Jeanne-Marie Leprince de Beaumont',
-        price: 12.99,
-        description: 'Beauty and the Beast is a traditional fairy tale',
-      },
-      {
-        id: '2',
-        title: 'Cinderella',
-        author: 'Charles Perrault',
-        price: 10.99,
-        description:
-          'Illustrations featuring mix of styles in both clothing and architecture',
-      },
-      {
-        id: '3',
-        title: 'The Ugly Duckling',
-        author: 'Hans Christian Andersen',
-        price: 9.99,
-        description: 'An ugly duckling spends an unhappy year ostracized',
-      },
-    ],
-  }),
-  { virtual: true }
-);
+jest.mock('../data/products', () => {
+  const data = [
+    {
+      id: '1',
+      title: 'Beauty and the Beast',
+      price: 12.99,
+      description: 'Beauty and the Beast is a traditional fairy tale',
+      category: 'A',
+    },
+    {
+      id: '2',
+      title: 'Cinderella',
+      price: 10.99,
+      description:
+        'Illustrations featuring mix of styles in both clothing and architecture',
+      category: 'B',
+    },
+    {
+      id: '3',
+      title: 'The Ugly Duckling',
+      price: 9.99,
+      description: 'An ugly duckling spends an unhappy year ostracized',
+      category: 'C',
+    },
+  ];
+  return data;
+});
 
 describe('Shop page functions', () => {
   it('clicking on a product card link goes to Product page', () => {

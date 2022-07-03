@@ -3,6 +3,14 @@ import userEvent from '@testing-library/user-event';
 import App from '../App';
 
 jest.mock(
+  '../utilities/scrollToTop',
+  () =>
+    function scrollToTop({ children }) {
+      return <div>{children}</div>;
+    }
+);
+
+jest.mock(
   '../pages/Home',
   () =>
     function Home() {
@@ -10,36 +18,33 @@ jest.mock(
     }
 );
 
-jest.mock(
-  '../data/products.json',
-  () => ({
-    data: [
-      {
-        id: '1',
-        title: 'Beauty and the Beast',
-        author: 'Jeanne-Marie Leprince de Beaumont',
-        price: 12.99,
-        description: 'Beauty and the Beast is a traditional fairy tale',
-      },
-      {
-        id: '2',
-        title: 'Cinderella',
-        author: 'Charles Perrault',
-        price: 10.99,
-        description:
-          'Illustrations featuring mix of styles in both clothing and architecture',
-      },
-      {
-        id: '3',
-        title: 'The Ugly Duckling',
-        author: 'Hans Christian Andersen',
-        price: 9.99,
-        description: 'An ugly duckling spends an unhappy year ostracized',
-      },
-    ],
-  }),
-  { virtual: true }
-);
+jest.mock('../data/products', () => {
+  const data = [
+    {
+      id: '1',
+      title: 'Beauty and the Beast',
+      author: 'Jeanne-Marie Leprince de Beaumont',
+      price: 12.99,
+      description: 'Beauty and the Beast is a traditional fairy tale',
+    },
+    {
+      id: '2',
+      title: 'Cinderella',
+      author: 'Charles Perrault',
+      price: 10.99,
+      description:
+        'Illustrations featuring mix of styles in both clothing and architecture',
+    },
+    {
+      id: '3',
+      title: 'The Ugly Duckling',
+      author: 'Hans Christian Andersen',
+      price: 9.99,
+      description: 'An ugly duckling spends an unhappy year ostracized',
+    },
+  ];
+  return data;
+});
 
 function addItemToCart(itemQuantity) {
   const linkShop = screen.getByRole('link', {
@@ -70,7 +75,7 @@ function addTwoItemsToCart() {
   const AddToCartBtn2 = screen.getByRole('button', { name: /add to cart/i });
   userEvent.click(AddToCartBtn2);
 
-  const linkCart = screen.getByRole('link', { name: /cart 2/i });
+  const linkCart = screen.getByTestId('cart');
   userEvent.click(linkCart);
 }
 
@@ -78,7 +83,7 @@ describe('Cart page functions', () => {
   it('item appears on Cart page when clicking on add-to-cart on Product page, ', () => {
     render(<App />);
     addItemToCart(1);
-    const linkCart = screen.getByRole('link', { name: /cart 1/i });
+    const linkCart = screen.getByTestId('cart');
     userEvent.click(linkCart);
     expect(screen.getByText(/Beauty and the Beast/i)).toBeInTheDocument();
   });
@@ -86,7 +91,7 @@ describe('Cart page functions', () => {
   it('item quantity is correct on Cart page', () => {
     render(<App />);
     addItemToCart(4);
-    const linkCart = screen.getByRole('link', { name: /cart 4/i });
+    const linkCart = screen.getByTestId('cart');
     userEvent.click(linkCart);
     expect(screen.getByText(/quantity: 4/i)).toBeInTheDocument();
   });
@@ -94,17 +99,17 @@ describe('Cart page functions', () => {
   it('total price is correct based on item quantity', () => {
     render(<App />);
     addItemToCart(4);
-    const linkCart = screen.getByRole('link', { name: /cart 4/i });
+    const linkCart = screen.getByTestId('cart');
     userEvent.click(linkCart);
     expect(
-      screen.getByRole('heading', { name: /total: \$51\.96/i })
+      screen.getByRole('heading', { name: /total: £51\.96/i })
     ).toBeInTheDocument();
   });
 
   it('remove item button works', () => {
     render(<App />);
     addItemToCart(1);
-    const linkCart = screen.getByRole('link', { name: /cart 1/i });
+    const linkCart = screen.getByTestId('cart');
     userEvent.click(linkCart);
     const removeBtn = screen.getByRole('button', { name: /remove/i });
     userEvent.click(removeBtn);
@@ -114,7 +119,7 @@ describe('Cart page functions', () => {
   it('increment item button works', () => {
     render(<App />);
     addItemToCart(1);
-    const linkCart = screen.getByRole('link', { name: /cart 1/i });
+    const linkCart = screen.getByTestId('cart');
     userEvent.click(linkCart);
     const addBtn = screen.getByRole('button', { name: /\+/i });
     userEvent.click(addBtn);
@@ -124,7 +129,7 @@ describe('Cart page functions', () => {
   it('decrement item button works', () => {
     render(<App />);
     addItemToCart(4);
-    const linkCart = screen.getByRole('link', { name: /cart 4/i });
+    const linkCart = screen.getByTestId('cart');
     userEvent.click(linkCart);
     const subBtn = screen.getByRole('button', { name: /-/i });
     userEvent.click(subBtn);
@@ -134,7 +139,7 @@ describe('Cart page functions', () => {
   it('quantity input box works', () => {
     render(<App />);
     addItemToCart(1);
-    const linkCart = screen.getByRole('link', { name: /cart 1/i });
+    const linkCart = screen.getByTestId('cart');
     userEvent.click(linkCart);
     const inputBox = screen.getByRole('spinbutton');
     userEvent.type(inputBox, '4');
@@ -156,7 +161,7 @@ describe('Multiple items test', () => {
     addTwoItemsToCart();
 
     expect(
-      screen.getByRole('heading', { name: /total: \$23\.98/i })
+      screen.getByRole('heading', { name: /total: £23\.98/i })
     ).toBeInTheDocument();
   });
 });
