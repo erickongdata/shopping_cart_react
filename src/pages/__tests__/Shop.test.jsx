@@ -39,9 +39,12 @@ describe('rendering data', () => {
     const data = [
       { id: '1', title: 'Alice in Wonderland', price: 19.99, category: 'A' },
     ];
-    const sorting = { alpha: '', price: '' };
     renderWithRouter(
-      <ShopContext data={data} category="all" sorting={sorting} />
+      <ShopContext
+        data={data}
+        category="all"
+        sorting={{ alpha: '', price: '' }}
+      />
     );
     expect(
       screen.getByRole('heading', { name: /alice in wonderland/i })
@@ -55,9 +58,12 @@ describe('rendering data', () => {
       { id: '2', title: 'Alice in Wonderland', price: 9.99, category: 'B' },
       { id: '3', title: 'Alice in Wonderland', price: 9.99, category: 'C' },
     ];
-    const sorting = { alpha: '', price: '' };
     renderWithRouter(
-      <ShopContext data={data} category="all" sorting={sorting} />
+      <ShopContext
+        data={data}
+        category="all"
+        sorting={{ alpha: '', price: '' }}
+      />
     );
     const elements = screen.getAllByRole('heading', {
       name: /alice in wonderland/i,
@@ -89,9 +95,12 @@ describe('test filter and sorting buttons - manual category selection', () => {
   ];
 
   it('category "all" works', () => {
-    const sorting = { alpha: '', price: '' };
     renderWithRouter(
-      <ShopContext data={data} category="all" sorting={sorting} />
+      <ShopContext
+        data={data}
+        category="all"
+        sorting={{ alpha: '', price: '' }}
+      />
     );
     expect(screen.getByText(/Beauty and the Beast/i)).toBeInTheDocument();
     expect(screen.getByText(/Cinderella/i)).toBeInTheDocument();
@@ -99,9 +108,12 @@ describe('test filter and sorting buttons - manual category selection', () => {
   });
 
   it('category filtering works', () => {
-    const sorting = { alpha: '', price: '' };
     renderWithRouter(
-      <ShopContext data={data} category="cin" sorting={sorting} />
+      <ShopContext
+        data={data}
+        category="cin"
+        sorting={{ alpha: '', price: '' }}
+      />
     );
     expect(screen.queryByText(/Beauty and the Beast/i)).not.toBeInTheDocument();
     expect(screen.getByText(/Cinderella/i)).toBeInTheDocument();
@@ -109,42 +121,54 @@ describe('test filter and sorting buttons - manual category selection', () => {
   });
 
   it('sorting az works', () => {
-    const sorting = { alpha: 'az', price: '' };
     renderWithRouter(
-      <ShopContext data={data} category="all" sorting={sorting} />
+      <ShopContext
+        data={data}
+        category="all"
+        sorting={{ alpha: 'az', price: '' }}
+      />
     );
     const cardTitles = screen.getAllByTestId(/card-title/i);
-    expect(cardTitles[0].textContent).toMatch(/Beauty and the Beast/i);
-    expect(cardTitles[2].textContent).toMatch(/The Ugly Duckling/i);
+    expect(cardTitles[0]).toHaveTextContent(/Beauty and the Beast/i);
+    expect(cardTitles[2]).toHaveTextContent(/The Ugly Duckling/i);
   });
 
   it('sorting za works', () => {
-    const sorting = { alpha: 'za', price: '' };
     renderWithRouter(
-      <ShopContext data={data} category="all" sorting={sorting} />
+      <ShopContext
+        data={data}
+        category="all"
+        sorting={{ alpha: 'za', price: '' }}
+      />
     );
     const cardTitles = screen.getAllByTestId(/card-title/i);
-    expect(cardTitles[0].textContent).toMatch(/The Ugly Duckling/i);
-    expect(cardTitles[2].textContent).toMatch(/Beauty and the Beast/i);
+    expect(cardTitles[0]).toHaveTextContent(/The Ugly Duckling/i);
+    expect(cardTitles[2]).toHaveTextContent(/Beauty and the Beast/i);
   });
 
   it('sorting price low-high works', () => {
-    const sorting = { alpha: '', price: 'lh' };
     renderWithRouter(
-      <ShopContext data={data} category="all" sorting={sorting} />
+      <ShopContext
+        data={data}
+        category="all"
+        sorting={{ alpha: '', price: 'lh' }}
+      />
     );
     const cardTitles = screen.getAllByTestId(/card-title/i);
-    expect(cardTitles[0].textContent).toMatch(/The Ugly Duckling/i);
-    expect(cardTitles[2].textContent).toMatch(/Beauty and the Beast/i);
+    expect(cardTitles[0]).toHaveTextContent(/The Ugly Duckling/i);
+    expect(cardTitles[2]).toHaveTextContent(/Beauty and the Beast/i);
   });
 
   it('sorting price high-low works', () => {
-    const sorting = { alpha: '', price: 'hl' };
     renderWithRouter(
-      <ShopContext data={data} category="all" sorting={sorting} />
+      <ShopContext
+        data={data}
+        category="all"
+        sorting={{ alpha: '', price: 'hl' }}
+      />
     );
     const cardTitles = screen.getAllByTestId(/card-title/i);
-    expect(cardTitles[0].textContent).toMatch(/Beauty and the Beast/i);
-    expect(cardTitles[2].textContent).toMatch(/The Ugly Duckling/i);
+    expect(cardTitles[0]).toHaveTextContent(/Beauty and the Beast/i);
+    expect(cardTitles[2]).toHaveTextContent(/The Ugly Duckling/i);
   });
 });

@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 import App from '../App';
 
 jest.mock(
-  '../utilities/scrollToTop',
+  '../hoc/ScrollToTop',
   () =>
     function scrollToTop({ children }) {
       return <div>{children}</div>;

@@ -6,7 +6,7 @@ import Cart from './pages/Cart';
 import Product from './pages/Product';
 import NotFound from './pages/NotFound';
 import { AppProvider } from './AppContext';
-import ScrollToTop from './utilities/scrollToTop';
+import ScrollToTop from './hoc/ScrollToTop';
 
 function App() {
   return (

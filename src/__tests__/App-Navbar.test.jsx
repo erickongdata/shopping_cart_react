@@ -35,7 +35,7 @@ jest.mock(
 );
 
 jest.mock(
-  '../utilities/scrollToTop',
+  '../hoc/ScrollToTop',
   () =>
     function scrollToTop({ children }) {
       return <div>{children}</div>;
