@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { AppContext } from '../AppContext';
-import toGBP from '../utilities/formatCurrency';
+import formatCurrency from '../utilities/formatCurrency';
 import range from '../utilities/arrayFunctions';
 
 function Product() {
@@ -25,7 +25,7 @@ function Product() {
           </div>
           <div className="col-12 col-md-8">
             <h1>{itemSelected.title}</h1>
-            <h2>{toGBP(itemSelected.price)}</h2>
+            <h2>{formatCurrency(itemSelected.price)}</h2>
             <p className="lead">Product code: {itemSelected.id}</p>
             <p style={{ maxWidth: '75ch' }}>{itemSelected.description}</p>
             <div style={{ height: '5rem' }}>

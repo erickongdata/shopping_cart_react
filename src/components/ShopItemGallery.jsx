@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AppContext } from '../AppContext';
-import toGBP from '../utilities/formatCurrency';
+import formatCurrency from '../utilities/formatCurrency';
 import { filterData } from '../utilities/categoryFilter';
 
 function ShopItemGallery() {
@@ -30,7 +30,7 @@ function ShopItemGallery() {
                 style={{ height: '80px' }}
               >
                 <h6 className="card-title pe-4">{item.title}</h6>
-                <p>{toGBP(item.price)}</p>
+                <p>{formatCurrency(item.price)}</p>
               </div>
             </div>
           </Link>

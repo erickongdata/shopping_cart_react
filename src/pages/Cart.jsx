@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AppContext } from '../AppContext';
-import toGBP from '../utilities/formatCurrency';
+import formatCurrency from '../utilities/formatCurrency';
 
 function Cart() {
   const {
@@ -45,7 +45,9 @@ function Cart() {
                     </Link>
                     <p className="text-secondary">
                       quantity: {item.quantity}, price:{' '}
-                      {toGBP(itemSelected(item.id).price * item.quantity)}
+                      {formatCurrency(
+                        itemSelected(item.id).price * item.quantity
+                      )}
                     </p>
                     <div className="d-flex">
                       <button
@@ -89,7 +91,7 @@ function Cart() {
         <div className="row justify-content-between bg-light border fixed-bottom px-5 py-3">
           <h3 className="col-12 col-md-5">Cart {`(${totalNumItems} items)`}</h3>
           <h3 className="text-muted col-6 col-md-5 text-end">
-            Total: {toGBP(totalPrice)}
+            Total: {formatCurrency(totalPrice)}
           </h3>
           <div className="col-6 col-md-2 d-flex justify-content-end">
             <button type="button" className="btn btn-success">
