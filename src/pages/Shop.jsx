@@ -2,70 +2,18 @@ import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AppContext } from '../AppContext';
 import toGBP from '../utilities/formatCurrency';
-import { getCategories, filterData } from '../utilities/categoryFilter';
+import { filterData } from '../utilities/categoryFilter';
+import ShopSortingButtons from '../components/ShopSortingButtons';
 
 function Shop() {
-  const { data, category, setCategory, sorting, setSorting } =
-    useContext(AppContext);
-
-  const categories = getCategories(data);
+  const { data, category, sorting } = useContext(AppContext);
 
   return (
     <div className="shop">
       <div className="container">
         <div className="py-6">
           <div className="my-3">
-            <button
-              type="button"
-              className="btn btn-light mx-1 my-1"
-              onClick={() => setCategory('all')}
-              style={{ boxShadow: `0px 1px 3px grey ` }}
-            >
-              All
-            </button>
-            <button
-              type="button"
-              className="btn btn-light mx-1 my-1"
-              onClick={() => setSorting({ alpha: 'az', price: '' })}
-              style={{ boxShadow: `0px 1px 3px grey ` }}
-            >
-              A-Z
-            </button>
-            <button
-              type="button"
-              className="btn btn-light mx-1 my-1"
-              onClick={() => setSorting({ alpha: 'za', price: '' })}
-              style={{ boxShadow: `0px 1px 3px grey ` }}
-            >
-              Z-A
-            </button>
-            <button
-              type="button"
-              className="btn btn-light mx-1 my-1"
-              onClick={() => setSorting({ alpha: '', price: 'lh' })}
-              style={{ boxShadow: `0px 1px 3px grey ` }}
-            >
-              £ low
-            </button>
-            <button
-              type="button"
-              className="btn btn-light mx-1 my-1"
-              onClick={() => setSorting({ alpha: '', price: 'hl' })}
-              style={{ boxShadow: `0px 1px 3px grey ` }}
-            >
-              £ high
-            </button>
-            {categories.map((cat) => (
-              <button
-                type="button"
-                key={`cat-${cat}`}
-                className="btn btn-light mx-1 my-1 text-capitalize"
-                onClick={() => setCategory(cat)}
-                style={{ boxShadow: `0px 1px 3px ${cat} ` }}
-              >
-                {cat}
-              </button>
-            ))}
+            <ShopSortingButtons />
           </div>
           <h1 className="text-capitalize">{category}</h1>
           <div className="row gy-4 gx-4">
