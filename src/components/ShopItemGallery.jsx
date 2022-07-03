@@ -29,7 +29,9 @@ function ShopItemGallery() {
                 className="d-flex justify-content-between gx-5 p-1"
                 style={{ height: '80px' }}
               >
-                <h6 className="card-title pe-4">{item.title}</h6>
+                <h6 className="card-title pe-4" data-testid="card-title">
+                  {item.title}
+                </h6>
                 <p>{formatCurrency(item.price)}</p>
               </div>
             </div>
