@@ -79,7 +79,7 @@ export function AppProvider({ children }) {
         return [...currCart, { id, quantity: itemQuantity }];
       }
       return currCart.map((item) => {
-        if (item.id === id && item.quantity < itemMaxLimit) {
+        if (item.id === id && item.quantity <= itemMaxLimit) {
           return { ...item, quantity: itemQuantity };
         }
         return item;
