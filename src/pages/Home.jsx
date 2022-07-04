@@ -1,10 +1,19 @@
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AppContext } from '../AppContext';
 import siteInfo from '../data/siteInfo';
 
 function Home() {
+  const { setCategory } = useContext(AppContext);
   const imgStyle = {
     objectFit: 'cover',
     height: '480px',
+  };
+  const cardImgStyle = {
+    objectFit: 'cover',
+    width: '320px',
+    height: '240px',
+    zIndex: '1',
   };
   return (
     <div className="home">
@@ -138,12 +147,36 @@ function Home() {
               </button>
             </div>
           </div>
-          <div className="d-flex justify-content-center">
+          <div className="d-flex justify-content-center mb-5">
             <Link to="/shop">
               <button type="button" className="btn btn-danger my-1">
                 GO TO SHOP
               </button>
             </Link>
+          </div>
+          <h3>Choose a Colour</h3>
+          <div className="home-category-select">
+            <div className="d-flex flex-wrap justify-content-center">
+              {siteInfo.homeColors.map((cat) => (
+                <Link
+                  to="/Shop"
+                  key={`cat-card-${cat.color}`}
+                  onClick={() => setCategory(`${cat.color}`)}
+                >
+                  <div className="category-card my-1 mx-1 position-relative d-flex justify-content-center align-items-center">
+                    <div className="category-card-title position-absolute bg-white w-100 h-100 d-flex justify-content-center align-items-center">
+                      <h2 className="text-black">{cat.color}</h2>
+                    </div>
+                    <img
+                      className="category-card-image"
+                      src={cat.image}
+                      alt={cat.color}
+                      style={cardImgStyle}
+                    />
+                  </div>
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </div>

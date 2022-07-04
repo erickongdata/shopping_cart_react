@@ -1,5 +1,8 @@
 const siteInfo = {
   siteTitle: 'All things Colour',
+  currencySymbol: '£',
+  currency: 'GBP',
+  language: 'en-GB',
   homeBanner: [
     {
       title: 'Hot Air Balloon Rides',
@@ -27,9 +30,14 @@ const siteInfo = {
       desc: '£14.99',
     },
   ],
-  currencySymbol: '£',
-  currency: 'GBP',
-  language: 'en-GB',
+  homeColors: [
+    { color: 'yellow', image: '/images/yellow/glasses.jpg' },
+    { color: 'black', image: '/images/black/watch.jpg' },
+    { color: 'blue', image: '/images/blue/house.jpg' },
+    { color: 'green', image: '/images/green/jar.jpg' },
+    { color: 'red', image: '/images/red/tomatoes.jpg' },
+    { color: 'white', image: '/images/white/guitar.jpg' },
+  ],
 };
 
 export default siteInfo;
