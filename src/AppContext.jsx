@@ -1,4 +1,4 @@
-import { createContext, useState, useMemo } from 'react';
+import { createContext, useState, useMemo, useRef } from 'react';
 import PropTypes from 'prop-types';
 import data from './data/products';
 import {
@@ -16,6 +16,7 @@ export function AppProvider({ children }) {
   const [cart, setCart] = useState([]);
   const [category, setCategory] = useState('all');
   const [sorting, setSorting] = useState({ alpha: '', price: '' });
+  const quantityDropdown = useRef();
   // Store and update cart total price and no. of items
   const totalPrice = useMemo(
     () => calculateTotalPrice(data, cart),
@@ -70,7 +71,7 @@ export function AppProvider({ children }) {
 
   const handleSubmitQuantity = (e, id) => {
     e.preventDefault();
-    const dropdown = document.querySelector(`[data-id="quant-${id}"]`); // change to useRef later
+    const dropdown = quantityDropdown.current;
     const itemQuantity = +dropdown.value;
     setCart((currCart) => {
       if (currCart.find((item) => item.id === id) === undefined) {
@@ -101,6 +102,7 @@ export function AppProvider({ children }) {
       setCategory,
       sorting,
       setSorting,
+      quantityDropdown,
     }),
     [cart, category, sorting]
   );

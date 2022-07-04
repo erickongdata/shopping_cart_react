@@ -5,7 +5,8 @@ import formatCurrency from '../utilities/formatCurrency';
 import range from '../utilities/arrayFunctions';
 
 function Product() {
-  const { data, cart, handleSubmitQuantity } = useContext(AppContext);
+  const { data, cart, handleSubmitQuantity, quantityDropdown } =
+    useContext(AppContext);
   const { productId = '1' } = useParams();
   const itemSelected = data.find((item) => item.id === productId);
   const index = cart.findIndex((item) => item.id === productId);
@@ -34,6 +35,7 @@ function Product() {
                   <select
                     data-id={`quant-${productId}`}
                     className="me-1 rounded"
+                    ref={quantityDropdown}
                   >
                     {numArr.map((el) => (
                       <option
