@@ -38,12 +38,13 @@ function Navbar() {
           </div>
         </div>
       </nav>
-      <div className="col-2 py-3 d-flex bg-light justify-content-end">
+      <nav className="col-2 py-3 d-flex bg-light justify-content-end">
         <NavLink to="/cart">
           <button
             type="button"
             className="btn btn-light position-relative"
             data-testid="cart"
+            tabIndex="-1"
           >
             <img
               src="./icons/cart.svg"
@@ -57,7 +58,7 @@ function Navbar() {
             </span>
           </button>
         </NavLink>
-      </div>
+      </nav>
     </div>
   );
 }
