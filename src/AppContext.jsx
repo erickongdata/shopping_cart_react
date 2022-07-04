@@ -5,13 +5,14 @@ import {
   calculateTotalNumItems,
   calculateTotalPrice,
 } from './utilities/calculateTotal';
+import siteInfo from './data/siteInfo';
 
 Object.freeze(data);
 
 export const AppContext = createContext();
 
 export function AppProvider({ children }) {
-  const siteTitle = 'All Things Colour';
+  const { siteTitle } = siteInfo;
   // cart is an array of objects with properties - id, quantity
   const [cart, setCart] = useState([]);
   const [category, setCategory] = useState('all');

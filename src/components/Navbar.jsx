@@ -8,7 +8,7 @@ function Navbar() {
     <div className="row bg-light fixed-top justify-content-center">
       <nav className="navbar navbar-expand-sm bg-light p-3 col-9">
         <div className="container-fluid">
-          <NavLink className="navbar-brand" to="/">
+          <NavLink className="navbar-brand site-title" to="/">
             {siteTitle}
           </NavLink>
           <button

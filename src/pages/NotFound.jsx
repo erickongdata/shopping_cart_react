@@ -4,7 +4,7 @@ function NotFound() {
   return (
     <div className="not-found">
       <div className="container">
-        <div className="py-6">
+        <div className="py-7">
           <h1>Page not found</h1>
           <Link to="/">
             <button type="button" className="btn btn-primary">

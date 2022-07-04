@@ -1,7 +1,9 @@
+import siteInfo from '../data/siteInfo';
+
 function formatCurrency(value) {
-  return value.toLocaleString('en-GB', {
+  return value.toLocaleString(siteInfo.language, {
     style: 'currency',
-    currency: 'GBP',
+    currency: siteInfo.currency,
   });
 }
 

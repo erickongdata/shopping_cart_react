@@ -20,12 +20,12 @@ function Cart() {
   return (
     <div className="cart">
       <div className="container">
-        <div className="py-6">
+        <div className="py-7">
           {cart.length === 0 ? (
             <h1>No items to display</h1>
           ) : (
             cart.map((item) => (
-              <div key={item.id} className="border mb-3 rounded">
+              <div key={item.id} className="border mb-3 rounded shadow-sm">
                 <div className="d-sm-flex">
                   <Link to={`/product/${item.id}`}>
                     <img
@@ -77,7 +77,7 @@ function Cart() {
                       <button
                         type="button"
                         onClick={() => handleRemoveCartItem(item.id)}
-                        className="btn btn-light border border-2"
+                        className="btn btn-secondary border border-2"
                       >
                         Remove
                       </button>

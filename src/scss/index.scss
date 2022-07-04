@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
+
 /* Hide Arrows in Input Number Field */
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
@@ -21,4 +23,27 @@ input[type='number'] {
 .py-6 {
   padding-top: 5rem !important;
   padding-bottom: 5rem !important;
+}
+
+.pt-7 {
+  padding-top: 7rem !important;
+}
+
+.pb-7 {
+  padding-bottom: 7rem !important;
+}
+
+.py-7 {
+  padding-top: 7rem !important;
+  padding-bottom: 7rem !important;
+}
+
+.site-title {
+  font-family: 'Handlee', cursive;
+  font-size: 1.5rem;
+}
+
+.item-card:hover {
+  transform: scale(1.01);
+  outline: 3px solid grey;
 }

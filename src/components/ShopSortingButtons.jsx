@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { AppContext } from '../AppContext';
 import { getCategories } from '../utilities/categoryFilter';
+import siteInfo from '../data/siteInfo';
 
 function ShopSortingButtons() {
   const { data, setCategory, setSorting } = useContext(AppContext);
@@ -8,13 +9,6 @@ function ShopSortingButtons() {
 
   return (
     <>
-      <button
-        type="button"
-        className="btn btn-light mx-1 my-1"
-        onClick={() => setCategory('all')}
-      >
-        All
-      </button>
       <button
         type="button"
         className="btn btn-light mx-1 my-1"
@@ -34,14 +28,21 @@ function ShopSortingButtons() {
         className="btn btn-light mx-1 my-1"
         onClick={() => setSorting({ alpha: '', price: 'lh' })}
       >
-        £ low
+        {siteInfo.currencySymbol} low
       </button>
       <button
         type="button"
         className="btn btn-light mx-1 my-1"
         onClick={() => setSorting({ alpha: '', price: 'hl' })}
       >
-        £ high
+        {siteInfo.currencySymbol} high
+      </button>
+      <button
+        type="button"
+        className="btn btn-light mx-1 my-1"
+        onClick={() => setCategory('all')}
+      >
+        All
       </button>
       {categories.map((cat) => (
         <button

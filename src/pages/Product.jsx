@@ -16,15 +16,15 @@ function Product() {
     <div className="product">
       <div className="container">
         <div className="row py-6">
-          <div className="col-12 col-md-4">
+          <div className="col-12 col-sm-4">
             <img
               src={itemSelected.src}
               alt={itemSelected.title}
-              style={{ maxHeight: '450px', width: 'auto', maxWidth: '100%' }}
-              className="d-block mx-auto pt-2 pb-3"
+              style={{ maxHeight: '450px' }}
+              className="d-block mx-auto pt-2 pb-3 img-fluid"
             />
           </div>
-          <div className="col-12 col-md-8">
+          <div className="col-12 col-sm-8">
             <h1>{itemSelected.title}</h1>
             <h2>{formatCurrency(itemSelected.price)}</h2>
             <p className="lead">Product code: {itemSelected.id}</p>
