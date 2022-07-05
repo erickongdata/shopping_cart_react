@@ -29,17 +29,18 @@ function Cart() {
                 <div className="d-sm-flex">
                   <Link to={`/product/${item.id}`}>
                     <img
-                      className="me-3"
+                      className="mx-auto"
                       src={itemSelected(item.id).src}
                       alt={itemSelected(item.id).title}
                       style={{
                         height: '160px',
                         width: '160px',
                         objectFit: 'cover',
+                        display: 'block',
                       }}
                     />
                   </Link>
-                  <div className="p-1">
+                  <div className="py-1 px-2">
                     <Link to={`/product/${item.id}`} className="lead text-dark">
                       <h5>{itemSelected(item.id).title}</h5>
                     </Link>
