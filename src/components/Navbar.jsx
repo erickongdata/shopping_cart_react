@@ -1,15 +1,16 @@
 import { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { AppContext } from '../AppContext';
+import siteInfo from '../data/siteInfo';
 
 function Navbar() {
-  const { siteTitle, totalNumItems } = useContext(AppContext);
+  const { totalNumItems } = useContext(AppContext);
   return (
     <div className="row bg-light fixed-top justify-content-center">
       <nav className="navbar navbar-expand-sm bg-light p-3 col-9">
         <div className="container-fluid">
           <NavLink className="navbar-brand site-title" to="/">
-            {siteTitle}
+            {siteInfo.siteTitle}
           </NavLink>
           <button
             className="navbar-toggler"

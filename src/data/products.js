@@ -5,13 +5,13 @@ import productsRD from './productsRD.json';
 import productsWH from './productsWH.json';
 import productsYE from './productsYE.json';
 
-const { data: dataBK } = productsBK;
-const { data: dataBU } = productsBU;
-const { data: dataGN } = productsGN;
-const { data: dataRD } = productsRD;
-const { data: dataWH } = productsWH;
-const { data: dataYE } = productsYE;
+const { data: DATA_BK } = productsBK;
+const { data: DATA_BU } = productsBU;
+const { data: DATA_GN } = productsGN;
+const { data: DATA_RD } = productsRD;
+const { data: DATA_WH } = productsWH;
+const { data: DATA_YE } = productsYE;
 
-const data = [].concat(dataBK, dataBU, dataGN, dataRD, dataWH, dataYE);
+const DATA = [].concat(DATA_BK, DATA_BU, DATA_GN, DATA_RD, DATA_WH, DATA_YE);
 
-export default data;
+export default DATA;

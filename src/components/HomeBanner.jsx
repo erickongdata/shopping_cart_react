@@ -59,7 +59,7 @@ function HomeBanner() {
               <p>{siteInfo.homeBanner[0].desc}</p>
             </div>
           </div>
-          <div className="carousel-item">
+          <div className="carousel-item" data-bs-interval="5000">
             <img
               src={siteInfo.homeBanner[1].images}
               className="d-block w-100"
@@ -71,7 +71,7 @@ function HomeBanner() {
               <p>{siteInfo.homeBanner[1].desc}</p>
             </div>
           </div>
-          <div className="carousel-item">
+          <div className="carousel-item" data-bs-interval="5000">
             <img
               src={siteInfo.homeBanner[2].images}
               className="d-block w-100"
@@ -83,7 +83,7 @@ function HomeBanner() {
               <p>{siteInfo.homeBanner[2].desc}</p>
             </div>
           </div>
-          <div className="carousel-item">
+          <div className="carousel-item" data-bs-interval="5000">
             <img
               src={siteInfo.homeBanner[3].images}
               className="d-block w-100"
@@ -95,7 +95,7 @@ function HomeBanner() {
               <p>{siteInfo.homeBanner[3].desc}</p>
             </div>
           </div>
-          <div className="carousel-item">
+          <div className="carousel-item" data-bs-interval="5000">
             <img
               src={siteInfo.homeBanner[4].images}
               className="d-block w-100"

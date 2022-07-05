@@ -1,18 +1,16 @@
 import { createContext, useState, useMemo, useRef } from 'react';
 import PropTypes from 'prop-types';
-import data from './data/products';
+import DATA from './data/products';
 import {
   calculateTotalNumItems,
   calculateTotalPrice,
 } from './utilities/calculateTotal';
-import siteInfo from './data/siteInfo';
 
-Object.freeze(data);
+Object.freeze(DATA);
 
 export const AppContext = createContext();
 
 export function AppProvider({ children }) {
-  const { siteTitle } = siteInfo;
   // cart is an array of objects with properties - id, quantity
   const [cart, setCart] = useState([]);
   const [category, setCategory] = useState('all');
@@ -20,8 +18,8 @@ export function AppProvider({ children }) {
   const quantityDropdown = useRef();
   // Store and update cart total price and no. of items
   const totalPrice = useMemo(
-    () => calculateTotalPrice(data, cart),
-    [data, cart]
+    () => calculateTotalPrice(DATA, cart),
+    [DATA, cart]
   );
   const totalNumItems = useMemo(() => calculateTotalNumItems(cart), [cart]);
   const itemMaxLimit = 99;
@@ -89,9 +87,8 @@ export function AppProvider({ children }) {
 
   const context = useMemo(
     () => ({
-      siteTitle,
       cart,
-      data,
+      data: DATA,
       totalPrice,
       totalNumItems,
       handleAddCartItem,
