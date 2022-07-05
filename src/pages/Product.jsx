@@ -15,7 +15,7 @@ function Product() {
   return (
     <div className="product">
       <div className="container">
-        <div className="row py-6">
+        <div className="row py-7">
           <div className="col-12 col-sm-4">
             <img
               src={itemSelected.src}

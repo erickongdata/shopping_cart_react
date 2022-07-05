@@ -4,7 +4,8 @@
 // General
 // ----------------------------------------------
 
-/* Hide Arrows in Input Number Field */
+// Hide Arrows in Input Number Field
+// ----------------------------------------------
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -62,15 +63,15 @@ input[type='number'] {
 
 .category-card {
   cursor: pointer;
-}
 
-.category-card:hover {
-  outline: 3px solid grey;
-}
+  &:hover {
+    outline: 3px solid grey;
+  }
 
-.category-card-image:hover {
-  opacity: 0.2;
-  transition: 0.5s;
+  &-image:hover {
+    opacity: 0.2;
+    transition: 0.5s;
+  }
 }
 
 // ----------------------------------------------
