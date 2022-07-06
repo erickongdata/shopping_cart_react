@@ -14,14 +14,13 @@ function HomeCategorySelect() {
   };
 
   return (
-    <div className="home-category-select">
-      <div className="d-flex flex-wrap justify-content-center">
-        {siteInfo.homeColors.map((cat) => (
-          <Link
-            to="/Shop"
-            key={`cat-card-${cat.color}`}
-            onClick={() => setCategory(`${cat.color}`)}
-          >
+    <ul
+      className="d-flex flex-wrap justify-content-center"
+      style={{ listStyle: 'none' }}
+    >
+      {siteInfo.homeColors.map((cat) => (
+        <li key={`cat-card-${cat.color}`}>
+          <Link to="/Shop" onClick={() => setCategory(`${cat.color}`)}>
             <div className="category-card my-1 mx-1 bg-white position-relative d-flex justify-content-center align-items-center">
               <h2 className="category-card-title position-absolute text-black">
                 {cat.color}
@@ -29,14 +28,14 @@ function HomeCategorySelect() {
               <img
                 className="category-card-image"
                 src={cat.image}
-                alt={cat.color}
+                alt=""
                 style={cardImgStyle}
               />
             </div>
           </Link>
-        ))}
-      </div>
-    </div>
+        </li>
+      ))}
+    </ul>
   );
 }
 

@@ -6,6 +6,7 @@
       "price": 8.99,
       "description": "Includes two free emoji soft toys.",
       "src": "/images/yellow/emoji.jpg",
+      "src-s": "/images/yellow/emoji-s.jpg",
       "category": "yellow"
     },
     {
@@ -14,6 +15,7 @@
       "price": 14.99,
       "description": "Yellow is the colour of the summer. These cat eye sunglasses are sure to grab everyone's attention.",
       "src": "/images/yellow/glasses.jpg",
+      "src-s": "/images/yellow/glasses-s.jpg",
       "category": "yellow"
     },
     {
@@ -22,6 +24,7 @@
       "price": 125.99,
       "description": "Its classy features make it an item that is irresistible and trendy. First class stitching all the way through.",
       "src": "/images/yellow/jacket.jpg",
+      "src-s": "/images/yellow/jacket-s.jpg",
       "category": "yellow"
     },
     {
@@ -30,6 +33,7 @@
       "price": 3290.00,
       "description": "This giant yellow duck is an exact replica of the little fellows you probably played with in the bath as a youngster!",
       "src": "/images/yellow/rubber-duck.jpg",
+      "src-s": "/images/yellow/rubber-duck-s.jpg",
       "category": "yellow"
     },
     {
@@ -38,6 +42,7 @@
       "price": 48.99,
       "description": "Outstanding acoustic performance with rugged durability.",
       "src": "/images/yellow/stethoscope.jpg",
+      "src-s": "/images/yellow/stethoscope-s.jpg",
       "category": "yellow"
     },
     {
@@ -46,6 +51,7 @@
       "price": 48.99,
       "description": "Watch all your favourite TV programs on this vintage set.",
       "src": "/images/yellow/tv.jpg",
+      "src-s": "/images/yellow/tv-s.jpg",
       "category": "yellow"
     }
   ]

@@ -8,38 +8,38 @@ function ShopSortingButtons() {
   const categories = getCategories(data);
 
   return (
-    <>
+    <div>
       <button
         type="button"
-        className="btn btn-light mx-1 my-1"
+        className="btn btn-light m-1"
         onClick={() => setSorting({ alpha: 'az', price: '' })}
       >
         A-Z
       </button>
       <button
         type="button"
-        className="btn btn-light mx-1 my-1"
+        className="btn btn-light m-1"
         onClick={() => setSorting({ alpha: 'za', price: '' })}
       >
         Z-A
       </button>
       <button
         type="button"
-        className="btn btn-light mx-1 my-1"
+        className="btn btn-light m-1"
         onClick={() => setSorting({ alpha: '', price: 'lh' })}
       >
         {siteInfo.currencySymbol} low
       </button>
       <button
         type="button"
-        className="btn btn-light mx-1 my-1"
+        className="btn btn-light m-1"
         onClick={() => setSorting({ alpha: '', price: 'hl' })}
       >
         {siteInfo.currencySymbol} high
       </button>
       <button
         type="button"
-        className="btn btn-light mx-1 my-1"
+        className="btn btn-light m-1"
         onClick={() => setCategory('all')}
       >
         All
@@ -48,7 +48,7 @@ function ShopSortingButtons() {
         <button
           type="button"
           key={`cat-${cat}`}
-          className="btn btn-light mx-1 my-1 text-capitalize"
+          className="btn btn-light m-1 text-capitalize"
           onClick={() => setCategory(cat)}
           style={{
             color: `${cat}`,
@@ -58,7 +58,7 @@ function ShopSortingButtons() {
           {cat}
         </button>
       ))}
-    </>
+    </div>
   );
 }
 

@@ -6,6 +6,7 @@
       "price": 1.50,
       "description": "Hand reared, free range and and housed in higher welfare conditions. With a vibrant golden yolk and rich luxurious taste. Winner of the Best Yolk Award in 2020",
       "src": "/images/blue/eggs.jpg",
+      "src-s": "/images/blue/eggs-s.jpg",
       "category": "blue"
     },
     {
@@ -14,6 +15,7 @@
       "price": 129.00,
       "description": "Flying time of approx 1 hour! 3 - 4 hours for whole experience. Champagne served after landing. Voucher valid for 12 months. Non-refundable.",
       "src": "/images/blue/hot-air-balloon.jpg",
+      "src-s": "/images/blue/hot-air-balloon-s.jpg",
       "category": "blue"
     },
     {
@@ -22,6 +24,7 @@
       "price": 329.00,
       "description": "Situated in the pretty village of Edore, with its narrow lanes filled with art galleries and independent shops whilst being spoilt for choice with restaurants, tearooms and cafes. Take a short trip on the seasonal ferry which takes passengers across to Bristow with its sandy beach and well-known deli.",
       "src": "/images/blue/house.jpg",
+      "src-s": "/images/blue/house-s.jpg",
       "category": "blue"
     },
     {
@@ -30,6 +33,7 @@
       "price": 12.00,
       "description": "Suitable for professional or aspiring actors.",
       "src": "/images/blue/mask.jpg",
+      "src-s": "/images/blue/mask-s.jpg",
       "category": "blue"
     },
     {
@@ -38,6 +42,7 @@
       "price": 21500.00,
       "description": "Absolutely mint condition inside & out. No chips or scratches, leather upholstery & carpets are unworn, like new. Beautiful car to drive, everything works as it should.",
       "src": "/images/blue/mercedes.jpg",
+      "src-s": "/images/blue/mercedes-s.jpg",
       "category": "blue"
     }
   ]

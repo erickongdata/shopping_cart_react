@@ -6,8 +6,8 @@ import siteInfo from '../data/siteInfo';
 function Navbar() {
   const { totalNumItems } = useContext(AppContext);
   return (
-    <div className="row bg-light fixed-top justify-content-center">
-      <nav className="navbar navbar-expand-sm bg-light p-3 col-9">
+    <nav className="row bg-light fixed-top justify-content-center">
+      <div className="navbar navbar-expand-sm bg-light p-3 col-9">
         <div className="container-fluid">
           <NavLink className="navbar-brand site-title" to="/">
             {siteInfo.siteTitle}
@@ -38,8 +38,8 @@ function Navbar() {
             </ul>
           </div>
         </div>
-      </nav>
-      <nav className="col-2 py-3 d-flex bg-light justify-content-end">
+      </div>
+      <div className="col-2 py-3 d-flex bg-light justify-content-end">
         <NavLink to="/cart">
           <button
             type="button"
@@ -59,8 +59,8 @@ function Navbar() {
             </span>
           </button>
         </NavLink>
-      </nav>
-    </div>
+      </div>
+    </nav>
   );
 }
 

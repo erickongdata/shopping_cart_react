@@ -8,9 +8,9 @@ function ShopItemGallery() {
   const { data, category, sorting } = useContext(AppContext);
 
   return (
-    <div className="row gy-4 gx-4">
+    <ul className="row gy-4 gx-4" style={{ listStyle: 'none' }}>
       {filterData(data, category, sorting.alpha, sorting.price).map((item) => (
-        <div key={item.id} className="col-12 col-md-6 col-lg-4 col-xlg-3">
+        <li key={item.id} className="col-12 col-md-6 col-lg-4 col-xlg-3">
           <Link
             to={`/product/${item.id}`}
             className="text-decoration-none text-dark"
@@ -36,9 +36,9 @@ function ShopItemGallery() {
               </div>
             </div>
           </Link>
-        </div>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 }
 

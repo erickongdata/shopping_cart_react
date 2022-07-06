@@ -6,6 +6,7 @@
       "price": 579.00,
       "description": "The short 30\" scale length and comfortable \"C\" shaped neck offer a fantastic playability and will appeal to players with smaller hands.",
       "src": "/images/white/guitar.jpg",
+      "src-s": "/images/white/guitar-s.jpg",
       "category": "white"
     },
     {
@@ -14,6 +15,7 @@
       "price": 7467.00,
       "description": "The piano measures 4 foot 10 inches long and 4 foot 11 inches wide with 88 keys. The condition of this piano is brand new. This product comes with a 5 year warranty.",
       "src": "/images/white/piano.jpg",
+      "src-s": "/images/white/piano-s.jpg",
       "category": "white"
     },
     {
@@ -22,6 +24,7 @@
       "price": 15.99,
       "description": "100% Hollowfibre Filling. Washing Instructions: Sponge Clean.",
       "src": "/images/white/pillows.jpg",
+      "src-s": "/images/white/pillows-s.jpg",
       "category": "white"
     },
     {
@@ -30,6 +33,7 @@
       "price": 1290.00,
       "description": "Perfect for large families or those who like to entertain.",
       "src": "/images/white/table.jpg",
+      "src-s": "/images/white/table-s.jpg",
       "category": "white"
     },
     {
@@ -38,6 +42,7 @@
       "price": 29.99,
       "description": "With sturdy nose and eye stitching, not easily chewed off by children, ensuring that they can be used safely.",
       "src": "/images/white/toybear.jpg",
+      "src-s": "/images/white/toybear-s.jpg",
       "category": "white"
     }
   ]
