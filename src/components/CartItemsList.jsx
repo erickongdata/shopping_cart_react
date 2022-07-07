@@ -17,7 +17,7 @@ function CartItemsList() {
   const itemSelected = (id) => data.find((item) => item.id === id);
 
   return (
-    <ul style={{ listStyle: 'none' }}>
+    <ul className="p-0" style={{ listStyle: 'none' }}>
       {cart.map((item) => (
         <li key={item.id} className="border mb-3 rounded shadow-sm">
           <div className="d-sm-flex">

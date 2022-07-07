@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { AppContext } from '../AppContext';
 import formatCurrency from '../utilities/formatCurrency';
 import range from '../utilities/arrayFunctions';
+import ProductImageModal from '../components/ProductImageModal';
 
 function Product() {
   const { data, cart, handleSubmitQuantity, quantityDropdown } =
@@ -20,8 +21,10 @@ function Product() {
           <img
             src={itemSelected.src_s}
             alt={itemSelected.title}
-            style={{ maxHeight: '450px' }}
+            style={{ maxHeight: '450px', cursor: 'pointer' }}
             className="d-block mx-auto pt-2 pb-3 img-fluid"
+            data-bs-toggle="modal"
+            data-bs-target="#imageModal"
           />
         </div>
         <div className="col-12 col-sm-8">
@@ -59,6 +62,7 @@ function Product() {
           </div>
         </div>
       </div>
+      <ProductImageModal productId={productId} />
     </div>
   );
 }

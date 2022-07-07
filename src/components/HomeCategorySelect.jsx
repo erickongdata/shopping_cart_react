@@ -15,7 +15,7 @@ function HomeCategorySelect() {
 
   return (
     <ul
-      className="d-flex flex-wrap justify-content-center"
+      className="d-flex flex-wrap justify-content-center p-0"
       style={{ listStyle: 'none' }}
     >
       {siteInfo.homeColors.map((cat) => (
