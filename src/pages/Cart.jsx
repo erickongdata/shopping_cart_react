@@ -31,7 +31,7 @@ function Cart() {
                     <Link to={`/product/${item.id}`}>
                       <img
                         className="mx-auto"
-                        src={itemSelected(item.id).src}
+                        src={itemSelected(item.id).src_s}
                         alt={itemSelected(item.id).title}
                         style={{
                           height: '160px',

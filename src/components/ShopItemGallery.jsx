@@ -17,7 +17,7 @@ function ShopItemGallery() {
           >
             <div className="card item-card" style={{ height: '280px' }}>
               <img
-                src={item.src}
+                src={item.src_s}
                 alt={item.title}
                 className="card-img-top"
                 style={{

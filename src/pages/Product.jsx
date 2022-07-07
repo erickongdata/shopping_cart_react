@@ -18,7 +18,7 @@ function Product() {
         <div className="row py-7">
           <div className="col-12 col-sm-4">
             <img
-              src={itemSelected.src}
+              src={itemSelected.src_s}
               alt={itemSelected.title}
               style={{ maxHeight: '450px' }}
               className="d-block mx-auto pt-2 pb-3 img-fluid"

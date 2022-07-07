@@ -31,12 +31,12 @@ const siteInfo = {
     },
   ],
   homeColors: [
-    { color: 'yellow', image: '/images/yellow/glasses.jpg' },
-    { color: 'black', image: '/images/black/watch.jpg' },
-    { color: 'blue', image: '/images/blue/house.jpg' },
-    { color: 'green', image: '/images/green/jar.jpg' },
-    { color: 'red', image: '/images/red/tomatoes.jpg' },
-    { color: 'white', image: '/images/white/guitar.jpg' },
+    { color: 'yellow', image: '/images/yellow/glasses-s.jpg' },
+    { color: 'black', image: '/images/black/watch-s.jpg' },
+    { color: 'blue', image: '/images/blue/house-s.jpg' },
+    { color: 'green', image: '/images/green/jar-s.jpg' },
+    { color: 'red', image: '/images/red/tomatoes-s.jpg' },
+    { color: 'white', image: '/images/white/guitar-s.jpg' },
   ],
 };
 

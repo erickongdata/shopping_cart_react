@@ -6,7 +6,7 @@
       "price": 2.99,
       "description": "A reliable go-to for any stitch type, whether you're hand or machine sewing, it will sew all fabrics with strong, durable stitching without fibre lint or seam crimping. It can be used to make and mend clothing, home furnishings, blankets, bedsheets and more!",
       "src": "/images/black/thread.jpg",
-      "src-s": "/images/black/thread-s.jpg",
+      "src_s": "/images/black/thread-s.jpg",
       "category": "black"
     },
     {
@@ -15,7 +15,7 @@
       "price": 133849.00,
       "description": "Capture the dynamic excitement of live sports in 4K ultra slo-mo with the HDC-4800 4K/HD Ultra High Frame Rate Camera System, together with its dedicated 4K Baseband Processor BPU-4800. Shoot full-resolution 4K Ultra HD images at up to 400P (8x) or Full HD at 800P (16x) to reveal split-second action. This all-in-one solution for UHFR recording and playback makes it easier for broadcast production personnel to deliver superb slo-mo coverage of sports and other live events that TV viewing audiences love.",
       "src": "/images/black/video-camera.jpg",
-      "src-s": "/images/black/video-camera-s.jpg",
+      "src_s": "/images/black/video-camera-s.jpg",
       "category": "black"
     },
     {
@@ -24,7 +24,7 @@
       "price": 5.99,
       "description": "Unknown Recording",
       "src": "/images/black/vinyl.jpg",
-      "src-s": "/images/black/vinyl-s.jpg",
+      "src_s": "/images/black/vinyl-s.jpg",
       "category": "black"
     },
     {
@@ -33,7 +33,7 @@
       "price": 6970.00,
       "description": "Watch comes in a large 45.5mm case made entirely out of stainless steel with a striking uni-rotational coral red ceramic bezel with Liquidmetal diving scale. The dial is a contrasting grey and displays twin chronograph sub-dials at 9/3 o'clock, a date feature at 6 o'clock as well as large hour markers/hands edged in white gold and filled with Superluminova for increased legibility.",
       "src": "/images/black/watch.jpg",
-      "src-s": "/images/black/watch-s.jpg",
+      "src_s": "/images/black/watch-s.jpg",
       "category": "black"
     },
     {
@@ -42,7 +42,7 @@
       "price": 8.99,
       "description": "The Perfect Halloween Accessory",
       "src": "/images/black/witch-hat.jpg",
-      "src-s": "/images/black/witch-hat-s.jpg",
+      "src_s": "/images/black/witch-hat-s.jpg",
       "category": "black"
     }
   ]

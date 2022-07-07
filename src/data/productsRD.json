@@ -6,7 +6,7 @@
       "price": 4.99,
       "description": "Suitable for Birthday Parties, Weddings, Anniversaries and Celebrations.",
       "src": "/images/red/balloons.jpg",
-      "src-s": "/images/red/balloons-s.jpg",
+      "src_s": "/images/red/balloons-s.jpg",
       "category": "red"
     },
     {
@@ -15,7 +15,7 @@
       "price": 5.99,
       "description": "Caution: due to the small size of the dice, they are not for children aged 3 and under as they may pose a choking hazard. Adult supervision is recommended",
       "src": "/images/red/dice.jpg",
-      "src-s": "/images/red/dice-s.jpg",
+      "src_s": "/images/red/dice-s.jpg",
       "category": "red"
     },
     {
@@ -24,7 +24,7 @@
       "price": 35.99,
       "description": "Stylish, elegant dress. 90% Polyester, 10% Elastane.",
       "src": "/images/red/dress.jpg",
-      "src-s": "/images/red/dress-s.jpg",
+      "src_s": "/images/red/dress-s.jpg",
       "category": "red"
     },
     {
@@ -33,7 +33,7 @@
       "price": 57900.00,
       "description": "2.0 GME 272HP, Automatic, Petrol, 4WD LOW.",
       "src": "/images/red/jeep.jpg",
-      "src-s": "/images/red/jeep-s.jpg",
+      "src_s": "/images/red/jeep-s.jpg",
       "category": "red"
     },
     {
@@ -42,7 +42,7 @@
       "price": 2.10,
       "description": "Cherry Vine Tomatoes. Tender, sweet & fresh-flavoured.",
       "src": "/images/red/tomatoes.jpg",
-      "src-s": "/images/red/tomatoes-s.jpg",
+      "src_s": "/images/red/tomatoes-s.jpg",
       "category": "red"
     }
   ]
