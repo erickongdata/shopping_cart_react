@@ -17,12 +17,12 @@ function Product() {
   return (
     <div className="container">
       <div className="row pt-3 pb-7">
-        <div className="col-12 col-sm-4">
+        <div className="col-12 col-sm-4 my-3">
           <img
             src={itemSelected.src_s}
             alt={itemSelected.title}
             style={{ maxHeight: '450px', cursor: 'pointer' }}
-            className="d-block mx-auto pt-2 pb-3 img-fluid"
+            className="d-block mx-auto img-fluid hover-outline"
             data-bs-toggle="modal"
             data-bs-target="#imageModal"
           />

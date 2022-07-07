@@ -15,7 +15,7 @@ function ShopItemGallery() {
             to={`/product/${item.id}`}
             className="text-decoration-none text-dark"
           >
-            <div className="card item-card" style={{ height: '280px' }}>
+            <div className="card hover-enlarge" style={{ height: '280px' }}>
               <img
                 src={item.src_s}
                 alt={item.title}

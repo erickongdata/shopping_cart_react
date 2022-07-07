@@ -21,12 +21,13 @@ function HomeCategorySelect() {
       {siteInfo.homeColors.map((cat) => (
         <li key={`cat-card-${cat.color}`}>
           <Link to="/Shop" onClick={() => setCategory(`${cat.color}`)}>
-            <div className="category-card my-1 mx-1 bg-white position-relative d-flex justify-content-center align-items-center">
-              <h2 className="category-card-title position-absolute text-black">
-                {cat.color}
-              </h2>
+            <div
+              className="hover-outline my-1 mx-1 bg-white position-relative d-flex justify-content-center align-items-center"
+              role="button"
+            >
+              <h2 className="position-absolute text-black">{cat.color}</h2>
               <img
-                className="category-card-image"
+                className="hover-fade"
                 src={cat.image}
                 alt=""
                 style={cardImgStyle}

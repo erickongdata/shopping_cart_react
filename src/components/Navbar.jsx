@@ -9,7 +9,7 @@ function Navbar() {
     <nav className="row bg-light sticky-top justify-content-center">
       <div className="navbar navbar-expand-sm bg-light p-3 col-9">
         <div className="container-fluid">
-          <NavLink className="navbar-brand site-title" to="/">
+          <NavLink className="navbar-brand font-handlee fs-4" to="/">
             {siteInfo.siteTitle}
           </NavLink>
           <button
@@ -49,7 +49,7 @@ function Navbar() {
           >
             <img
               src="./icons/cart.svg"
-              alt=""
+              alt="cart"
               width="26px"
               height="26px"
               className="opacity-50"

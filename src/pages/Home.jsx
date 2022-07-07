@@ -12,7 +12,7 @@ function Home() {
             GO TO SHOP
           </Link>
         </div>
-        <h3>Choose a Colour</h3>
+        <h3 className="text-center">Choose a Colour</h3>
         <HomeCategorySelect />
       </div>
     </div>

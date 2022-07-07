@@ -52,33 +52,24 @@ input[type='number'] {
 // Typography
 // ----------------------------------------------
 
-.site-title {
+.font-handlee {
   font-family: 'Handlee', cursive;
-  font-size: 1.5rem;
 }
 
 // ----------------------------------------------
-// Home Page
+// Hover
 // ----------------------------------------------
 
-.category-card {
-  cursor: pointer;
-
-  &:hover {
-    outline: 3px solid grey;
-  }
-
-  &-image:hover {
-    opacity: 0.2;
-    transition: 0.5s;
-  }
+.hover-outline:hover {
+  outline: 3px solid grey;
 }
 
-// ----------------------------------------------
-// Shop Page
-// ----------------------------------------------
+.hover-fade:hover {
+  opacity: 0.2;
+  transition: 0.5s;
+}
 
-.item-card:hover {
+.hover-enlarge:hover {
   transform: scale(1.01);
   outline: 3px solid grey;
 }
