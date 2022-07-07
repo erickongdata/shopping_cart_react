@@ -7,15 +7,13 @@ function Shop() {
   const { category } = useContext(AppContext);
 
   return (
-    <div className="shop">
-      <div className="container">
-        <div className="py-6">
-          <div className="my-3">
-            <ShopSortingButtons />
-          </div>
-          <h1 className="text-capitalize">{category}</h1>
-          <ShopItemGallery />
+    <div className="container">
+      <div className="pt-3 pb-7">
+        <div className="mb-3">
+          <ShopSortingButtons />
         </div>
+        <h1 className="text-capitalize">{category}</h1>
+        <ShopItemGallery />
       </div>
     </div>
   );

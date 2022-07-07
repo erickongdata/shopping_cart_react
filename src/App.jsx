@@ -5,6 +5,7 @@ import Shop from './pages/Shop';
 import Cart from './pages/Cart';
 import Product from './pages/Product';
 import NotFound from './pages/NotFound';
+import About from './pages/About';
 import { AppProvider } from './AppContext';
 import ScrollToTop from './hoc/ScrollToTop';
 
@@ -23,6 +24,7 @@ function App() {
 
                 <Route path="/product/:productId" element={<Product />} />
 
+                <Route path="/about" element={<About />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </ScrollToTop>

@@ -6,7 +6,7 @@ import siteInfo from '../data/siteInfo';
 function Navbar() {
   const { totalNumItems } = useContext(AppContext);
   return (
-    <nav className="row bg-light fixed-top justify-content-center">
+    <nav className="row bg-light sticky-top justify-content-center">
       <div className="navbar navbar-expand-sm bg-light p-3 col-9">
         <div className="container-fluid">
           <NavLink className="navbar-brand site-title" to="/">

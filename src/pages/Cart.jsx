@@ -7,14 +7,14 @@ function Cart() {
   const { cart } = useContext(AppContext);
 
   return (
-    <div className="cart">
+    <>
       <div className="container">
-        <div className="py-7">
+        <div className="pt-3 pb-7 mb-5">
           {cart.length === 0 ? <h1>No items to display</h1> : <CartItemsList />}
         </div>
-        <CartTotalDisplay />
       </div>
-    </div>
+      <CartTotalDisplay />
+    </>
   );
 }
 
