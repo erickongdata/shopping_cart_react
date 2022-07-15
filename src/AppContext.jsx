@@ -1,6 +1,7 @@
-import { createContext, useState, useMemo, useRef } from 'react';
+import { createContext, useMemo, useRef } from 'react';
 import PropTypes from 'prop-types';
 import DATA from './data/products';
+import useLocalStorage from './hooks/useLocalStorage';
 import {
   calculateTotalNumItems,
   calculateTotalPrice,
@@ -12,9 +13,12 @@ export const AppContext = createContext();
 
 export function AppProvider({ children }) {
   // cart is an array of objects with properties - id, quantity
-  const [cart, setCart] = useState([]);
-  const [category, setCategory] = useState('all');
-  const [sorting, setSorting] = useState({ alpha: '', price: '' });
+  const [cart, setCart] = useLocalStorage('cart', []);
+  const [category, setCategory] = useLocalStorage('category', 'all');
+  const [sorting, setSorting] = useLocalStorage('sorting', {
+    alpha: '',
+    price: '',
+  });
   const quantityDropdown = useRef();
   // Store and update cart total price and no. of items
   const totalPrice = useMemo(
