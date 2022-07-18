@@ -4,10 +4,10 @@ import { AppContext } from '../AppContext';
 import siteInfo from '../data/siteInfo';
 
 function Navbar() {
-  const { totalNumItems } = useContext(AppContext);
+  const { totalNumItems, handleSearchItem, searchBar } = useContext(AppContext);
   return (
     <nav className="row bg-light sticky-top justify-content-center">
-      <div className="navbar navbar-expand-sm bg-light p-3 col-9">
+      <div className="navbar navbar-expand-md bg-light p-3 col-9">
         <div className="container-fluid">
           <NavLink className="navbar-brand font-handlee fs-4" to="/">
             {siteInfo.siteTitle}
@@ -36,6 +36,22 @@ function Navbar() {
                 </NavLink>
               </li>
             </ul>
+            <form
+              className="d-flex mx-auto"
+              role="search"
+              onSubmit={handleSearchItem}
+            >
+              <input
+                className="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+                ref={searchBar}
+              />
+              <button className="btn btn-outline-success" type="submit">
+                Search
+              </button>
+            </form>
           </div>
         </div>
       </div>

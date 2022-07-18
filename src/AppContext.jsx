@@ -1,5 +1,6 @@
-import { createContext, useMemo, useRef } from 'react';
+import { createContext, useMemo, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 import DATA from './data/products';
 import useLocalStorage from './hooks/useLocalStorage';
 import {
@@ -19,7 +20,9 @@ export function AppProvider({ children }) {
     alpha: '',
     price: '',
   });
+  const [searchTerm, setSearchTerm] = useState('');
   const quantityDropdown = useRef();
+  const searchBar = useRef();
   // Store and update cart total price and no. of items
   const totalPrice = useMemo(
     () => calculateTotalPrice(DATA, cart),
@@ -27,6 +30,7 @@ export function AppProvider({ children }) {
   );
   const totalNumItems = useMemo(() => calculateTotalNumItems(cart), [cart]);
   const itemMaxLimit = 99;
+  const navigate = useNavigate();
 
   const handleAddCartItem = (id) => {
     setCart((currCart) => {
@@ -89,6 +93,19 @@ export function AppProvider({ children }) {
     });
   };
 
+  const handleSearchItem = (e) => {
+    e.preventDefault();
+    const search = searchBar.current.value;
+    setSearchTerm(search);
+    if (search === '') {
+      setCategory('all');
+    } else {
+      setCategory('search');
+    }
+
+    navigate('/shop');
+  };
+
   const context = useMemo(
     () => ({
       cart,
@@ -100,13 +117,17 @@ export function AppProvider({ children }) {
       handleRemoveCartItem,
       handleItemNumChange,
       handleSubmitQuantity,
+      handleSearchItem,
       category,
       setCategory,
       sorting,
       setSorting,
       quantityDropdown,
+      searchBar,
+      searchTerm,
+      setSearchTerm,
     }),
-    [cart, category, sorting]
+    [cart, category, sorting, searchTerm]
   );
 
   return <AppContext.Provider value={context}>{children}</AppContext.Provider>;

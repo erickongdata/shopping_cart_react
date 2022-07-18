@@ -25,11 +25,20 @@ const sortPrice = (data, order) => {
   return dataIn.sort((a, b) => b.price - a.price);
 };
 
-const filterData = (data, category, sortingAlpha, sortingPrice) => {
+const filterData = (data, category, sortingAlpha, sortingPrice, searchTerm) => {
   const dataIn = [...data];
   if (category === 'all')
     return sortPrice(sortAlpha(dataIn, sortingAlpha), sortingPrice);
-
+  if (category === 'search')
+    return sortPrice(
+      sortAlpha(
+        dataIn.filter((item) =>
+          item.title.toLowerCase().includes(searchTerm.toLowerCase())
+        ),
+        sortingAlpha
+      ),
+      sortingPrice
+    );
   return sortPrice(
     sortAlpha(
       dataIn.filter((item) => item.category === category),
