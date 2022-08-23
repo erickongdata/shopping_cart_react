@@ -1,42 +1,33 @@
 import { useContext } from 'react';
 import { AppContext } from '../AppContext';
 import { getCategories } from '../utilities/categoryFilter';
-import siteInfo from '../data/siteInfo';
 
 function ShopSortingButtons() {
   const { data, setCategory, setSorting } = useContext(AppContext);
   const categories = getCategories(data);
 
+  const handleChange = (e) => {
+    const selected = e.target.value;
+    switch (selected) {
+      case 'az':
+        setSorting({ alpha: 'az', price: '' });
+        break;
+      case 'za':
+        setSorting({ alpha: 'za', price: '' });
+        break;
+      case 'price-lh':
+        setSorting({ alpha: '', price: 'lh' });
+        break;
+      case 'price-hl':
+        setSorting({ alpha: '', price: 'hl' });
+        break;
+      default:
+        setSorting({ alpha: '', price: '' });
+    }
+  };
+
   return (
     <div>
-      <button
-        type="button"
-        className="btn btn-light m-1"
-        onClick={() => setSorting({ alpha: 'az', price: '' })}
-      >
-        A-Z
-      </button>
-      <button
-        type="button"
-        className="btn btn-light m-1"
-        onClick={() => setSorting({ alpha: 'za', price: '' })}
-      >
-        Z-A
-      </button>
-      <button
-        type="button"
-        className="btn btn-light m-1"
-        onClick={() => setSorting({ alpha: '', price: 'lh' })}
-      >
-        {siteInfo.currencySymbol} low
-      </button>
-      <button
-        type="button"
-        className="btn btn-light m-1"
-        onClick={() => setSorting({ alpha: '', price: 'hl' })}
-      >
-        {siteInfo.currencySymbol} high
-      </button>
       <button
         type="button"
         className="btn btn-light m-1"
@@ -58,6 +49,21 @@ function ShopSortingButtons() {
           {cat}
         </button>
       ))}
+      <select
+        className="form-select d-inline bg-light m-1"
+        style={{ width: 'max-content' }}
+        aria-label="Sort by"
+        onChange={handleChange}
+        defaultValue=""
+      >
+        <option value="" disabled>
+          Sort by
+        </option>
+        <option value="az">Sorted A-Z</option>
+        <option value="za">Sorted Z-A</option>
+        <option value="price-lh">Sorted by Price: low-high</option>
+        <option value="price-hl">Sorted by Price: high-low</option>
+      </select>
     </div>
   );
 }
