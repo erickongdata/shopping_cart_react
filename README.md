@@ -23,8 +23,8 @@ To build the app for production:
 npm run build
 ```
 
-![Alt text](./screenshots/atc_03_s.jpeg)
+![](./screenshots/atc_03_s.jpeg)
 
-![Alt text](./screenshots/atc_02_s.jpeg)
+![](./screenshots/atc_02_s.jpeg)
 
-![Alt text](./screenshots/atc_01_s.jpeg)
+![](./screenshots/atc_01_s.jpeg)
