@@ -64,7 +64,7 @@ function Navbar() {
             tabIndex="-1"
           >
             <img
-              src="./icons/cart.svg"
+              src={`${process.env.PUBLIC_URL}/icons/cart.svg`}
               alt="cart"
               width="26px"
               height="26px"

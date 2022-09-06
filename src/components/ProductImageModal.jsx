@@ -26,7 +26,7 @@ function ProductImageModal({ productId }) {
           </div>
           <div className="modal-body mx-auto">
             <img
-              src={itemSelected.src}
+              src={process.env.PUBLIC_URL + itemSelected.src}
               alt={itemSelected.title}
               className="img-fluid"
               style={{ maxHeight: '80vh' }}

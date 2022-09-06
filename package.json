@@ -1,5 +1,4 @@
 {
-  "homepage": "https://erickongdata.github.io/shopping_cart_react",
   "name": "shopping_cart_react",
   "version": "0.1.0",
   "private": true,
@@ -11,12 +10,11 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.3.0",
+    "react-scripts": "5.0.1",
     "uniqid": "^5.4.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -49,9 +47,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.30.0",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "gh-pages": "^4.0.0",
     "prettier": "^2.7.1",
-    "sass": "^1.53.0",
-    "react-scripts": "5.0.1"
+    "sass": "^1.53.0"
   }
 }

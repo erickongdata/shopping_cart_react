@@ -24,7 +24,7 @@ function CartItemsList() {
             <Link to={`/product/${item.id}`}>
               <img
                 className="mx-auto"
-                src={itemSelected(item.id).src_s}
+                src={process.env.PUBLIC_URL + itemSelected(item.id).src_s}
                 alt={itemSelected(item.id).title}
                 style={{
                   height: '160px',

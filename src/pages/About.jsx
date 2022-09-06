@@ -11,7 +11,7 @@ function About() {
         <h3 className="font-handlee">We are All Things Colour...</h3>
       </div>
       <img
-        src={itemSelected.src_s}
+        src={process.env.PUBLIC_URL + itemSelected.src_s}
         alt=""
         className="d-block img-fluid hover-outline"
       />

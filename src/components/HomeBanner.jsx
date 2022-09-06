@@ -48,7 +48,7 @@ function HomeBanner() {
       <div className="carousel-inner">
         <div className="carousel-item active" data-bs-interval="5000">
           <img
-            src={siteInfo.homeBanner[0].images}
+            src={process.env.PUBLIC_URL + siteInfo.homeBanner[0].images}
             className="d-block w-100"
             alt=""
             style={imgStyle}
@@ -60,7 +60,7 @@ function HomeBanner() {
         </div>
         <div className="carousel-item" data-bs-interval="5000">
           <img
-            src={siteInfo.homeBanner[1].images}
+            src={process.env.PUBLIC_URL + siteInfo.homeBanner[1].images}
             className="d-block w-100"
             alt=""
             style={imgStyle}
@@ -72,7 +72,7 @@ function HomeBanner() {
         </div>
         <div className="carousel-item" data-bs-interval="5000">
           <img
-            src={siteInfo.homeBanner[2].images}
+            src={process.env.PUBLIC_URL + siteInfo.homeBanner[2].images}
             className="d-block w-100"
             alt=""
             style={imgStyle}
@@ -84,7 +84,7 @@ function HomeBanner() {
         </div>
         <div className="carousel-item" data-bs-interval="5000">
           <img
-            src={siteInfo.homeBanner[3].images}
+            src={process.env.PUBLIC_URL + siteInfo.homeBanner[3].images}
             className="d-block w-100"
             alt=""
             style={imgStyle}
@@ -96,7 +96,7 @@ function HomeBanner() {
         </div>
         <div className="carousel-item" data-bs-interval="5000">
           <img
-            src={siteInfo.homeBanner[4].images}
+            src={process.env.PUBLIC_URL + siteInfo.homeBanner[4].images}
             className="d-block w-100"
             alt=""
             style={imgStyle}

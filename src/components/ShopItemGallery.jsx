@@ -21,7 +21,7 @@ function ShopItemGallery() {
       >
         <div className="card hover-enlarge" style={{ height: '280px' }}>
           <img
-            src={item.src_s}
+            src={process.env.PUBLIC_URL + item.src_s}
             alt={item.title}
             className="card-img-top"
             style={{

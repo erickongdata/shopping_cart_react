@@ -28,7 +28,7 @@ function HomeCategorySelect() {
               <h2 className="position-absolute text-black">{cat.color}</h2>
               <img
                 className="hover-fade"
-                src={cat.image}
+                src={process.env.PUBLIC_URL + cat.image}
                 alt=""
                 style={cardImgStyle}
               />
