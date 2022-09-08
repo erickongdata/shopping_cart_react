@@ -20,7 +20,7 @@ function HomeCategorySelect() {
     >
       {siteInfo.homeColors.map((cat) => (
         <li key={`cat-card-${cat.color}`}>
-          <Link to="/Shop" onClick={() => setCategory(`${cat.color}`)}>
+          <Link to="/shop" onClick={() => setCategory(`${cat.color}`)}>
             <div
               className="hover-outline my-1 mx-1 bg-white position-relative d-flex justify-content-center align-items-center"
               role="button"
