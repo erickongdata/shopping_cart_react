@@ -22,7 +22,7 @@ function HomeCategorySelect() {
         <li key={`cat-card-${cat.color}`}>
           <Link to="/shop" onClick={() => setCategory(`${cat.color}`)}>
             <div
-              className="hover-outline my-1 mx-1 bg-white position-relative d-flex justify-content-center align-items-center"
+              className="hover-outline my-3 mx-3 bg-white position-relative d-flex justify-content-center align-items-center"
               role="button"
             >
               <h2 className="position-absolute text-black">{cat.color}</h2>

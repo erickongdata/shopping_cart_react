@@ -6,9 +6,9 @@ import siteInfo from '../data/siteInfo';
 function Navbar() {
   const { totalNumItems, handleSearchItem, searchBar } = useContext(AppContext);
   return (
-    <nav className="row bg-white sticky-top justify-content-center border-bottom shadow">
-      <div className="navbar navbar-expand-md bg-white p-3 col-9">
-        <div className="container-fluid">
+    <nav className="border-bottom sticky-top">
+      <div className="row bg-white justify-content-center container-xxl mx-auto">
+        <div className="navbar navbar-expand-md bg-white p-3 col-9 col-md-10">
           <NavLink className="navbar-brand font-handlee fs-4" to="/">
             <img
               src={`${process.env.PUBLIC_URL}/icons/color.svg`}
@@ -17,7 +17,7 @@ function Navbar() {
               height="26px"
               className="me-2"
             />
-            <span>{siteInfo.siteTitle}</span>
+            <span className="site-title">{siteInfo.siteTitle}</span>
           </NavLink>
           <button
             className="navbar-toggler"
@@ -34,24 +34,24 @@ function Navbar() {
             <ul className="navbar-nav">
               <li className="nav-item">
                 <NavLink className="nav-link" to="/shop">
-                  Shop
+                  SHOP
                 </NavLink>
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/about">
-                  About
+                  ABOUT
                 </NavLink>
               </li>
             </ul>
             <form
-              className="d-flex mx-auto"
+              className="d-flex mx-auto my-2"
               role="search"
               onSubmit={handleSearchItem}
             >
               <input
-                className="form-control me-2"
+                className="form-control mx-2"
                 type="search"
-                placeholder="Search products"
+                placeholder="Search"
                 aria-label="Search"
                 ref={searchBar}
               />
@@ -61,27 +61,27 @@ function Navbar() {
             </form>
           </div>
         </div>
-      </div>
-      <div className="col-2 py-3 d-flex bg-white justify-content-end">
-        <NavLink to="/cart">
-          <button
-            type="button"
-            className="btn btn-white position-relative"
-            data-testid="cart"
-            tabIndex="-1"
-          >
-            <img
-              src={`${process.env.PUBLIC_URL}/icons/cart.svg`}
-              alt="cart"
-              width="26px"
-              height="26px"
-              className="opacity-50"
-            />
-            <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-              {totalNumItems > 0 && totalNumItems}
-            </span>
-          </button>
-        </NavLink>
+        <div className="col-3 col-md-2 py-3 d-flex bg-white justify-content-end">
+          <NavLink to="/cart">
+            <button
+              type="button"
+              className="btn btn-white position-relative"
+              data-testid="cart"
+              tabIndex="-1"
+            >
+              <img
+                src={`${process.env.PUBLIC_URL}/icons/cart.svg`}
+                alt="cart"
+                width="26px"
+                height="26px"
+                className="opacity-50"
+              />
+              <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                {totalNumItems > 0 && totalNumItems}
+              </span>
+            </button>
+          </NavLink>
+        </div>
       </div>
     </nav>
   );

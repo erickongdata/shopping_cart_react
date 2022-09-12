@@ -30,7 +30,7 @@ function ShopSortingButtons() {
     <div className="d-flex flex-wrap">
       <button
         type="button"
-        className="btn btn-light m-1 border-secondary border-opacity-25 hover-enlarge"
+        className="fw-bold btn btn-light m-1 border-secondary border-opacity-25 hover-enlarge"
         onClick={() => setCategory('all')}
       >
         All

@@ -19,7 +19,10 @@ function ShopItemGallery() {
         to={`/product/${item.id}`}
         className="text-decoration-none text-dark"
       >
-        <div className="card hover-enlarge" style={{ height: '280px' }}>
+        <div
+          className="card shadow-sm hover-enlarge"
+          style={{ height: '280px' }}
+        >
           <img
             src={process.env.PUBLIC_URL + item.src_s}
             alt={item.title}
@@ -33,10 +36,10 @@ function ShopItemGallery() {
             className="d-flex justify-content-between gx-5 p-1"
             style={{ height: '80px' }}
           >
-            <h6 className="card-title pe-4" data-testid="card-title">
+            <div className="card-title pe-4" data-testid="card-title">
               {item.title}
-            </h6>
-            <p>{formatCurrency(item.price)}</p>
+            </div>
+            <div>{formatCurrency(item.price)}</div>
           </div>
         </div>
       </Link>

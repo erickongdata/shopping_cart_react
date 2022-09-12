@@ -7,15 +7,15 @@ function Home() {
     <div className="container">
       <div className="pt-3 pb-7">
         <h3 className="text-center bg-danger text-light">
-          Welcome. Sale on now!
+          SPECIAL SALE ON NOW!
         </h3>
         <HomeBanner />
         <div className="d-flex justify-content-center mb-5">
           <Link to="/shop" className="btn btn-danger my-1">
-            GO TO SHOP
+            BROWSE THE STORE
           </Link>
         </div>
-        <h3 className="text-center bg-primary text-light">Choose a Colour</h3>
+        <h3 className="text-center bg-primary text-light">CHOOSE A COLOUR</h3>
         <HomeCategorySelect />
       </div>
     </div>

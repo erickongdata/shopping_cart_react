@@ -17,7 +17,10 @@ function CartItemsList() {
   const itemSelected = (id) => data.find((item) => item.id === id);
 
   return (
-    <ul className="p-0" style={{ listStyle: 'none' }}>
+    <ul
+      className="p-0 mx-auto"
+      style={{ listStyle: 'none', maxWidth: '640px' }}
+    >
       {cart.map((item) => (
         <li key={item.id} className="border mb-3 rounded shadow-sm">
           <div className="d-sm-flex text-bg-light">
@@ -34,10 +37,10 @@ function CartItemsList() {
                 }}
               />
             </Link>
-            <div className="py-1 px-2">
+            <div className="py-3 px-4 w-100 d-flex flex-column justify-content-center align-items-center">
               <Link
                 to={`/product/${item.id}`}
-                className="lead text-dark text-decoration-none"
+                className="lead text-dark text-decoration-none text-center"
               >
                 <h5>{itemSelected(item.id).title}</h5>
               </Link>

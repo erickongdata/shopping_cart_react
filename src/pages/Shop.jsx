@@ -12,7 +12,7 @@ function Shop() {
         <div className="mb-3">
           <ShopSortingButtons />
         </div>
-        <h1 className="text-capitalize text-dark border-bottom border-3">
+        <h1 className="text-capitalize text-dark border-bottom border-2">
           {category}
         </h1>
         <ShopItemGallery />

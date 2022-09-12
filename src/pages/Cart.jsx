@@ -8,7 +8,7 @@ function Cart() {
 
   return (
     <>
-      <div className="container">
+      <div className="container bg-img">
         <div className="pt-3 pb-7 mb-5">
           {cart.length === 0 ? <h1>No items to display</h1> : <CartItemsList />}
         </div>

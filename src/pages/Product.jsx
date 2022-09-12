@@ -16,7 +16,7 @@ function Product() {
 
   return (
     <div className="container">
-      <div className="row pt-3 pb-7 border-4 border">
+      <div className="row pt-5 pb-5">
         <div className="col-12 col-sm-4 my-3">
           <img
             src={process.env.PUBLIC_URL + itemSelected.src_s}
@@ -56,7 +56,7 @@ function Product() {
                 </button>
               </div>
             </form>
-            <p className="text-success">
+            <p className="text-danger m-2">
               {numInCart > 0 && `${numInCart} in Cart`}
             </p>
           </div>
