@@ -17,6 +17,10 @@ input[type='number'] {
   -moz-appearance: textfield;
 }
 
+.bg-img {
+  background-image: url('../images/doodle_light.png');
+}
+
 // ----------------------------------------------
 // Utility classes
 // ----------------------------------------------
@@ -61,7 +65,7 @@ input[type='number'] {
 // ----------------------------------------------
 
 .hover-outline:hover {
-  outline: 3px solid grey;
+  outline: 2px solid grey;
 }
 
 .hover-fade:hover {
@@ -71,5 +75,5 @@ input[type='number'] {
 
 .hover-enlarge:hover {
   transform: scale(1.01);
-  outline: 3px solid grey;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19);
 }

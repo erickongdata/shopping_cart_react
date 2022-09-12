@@ -16,13 +16,13 @@ function Product() {
 
   return (
     <div className="container">
-      <div className="row pt-3 pb-7">
+      <div className="row pt-3 pb-7 border-4 border">
         <div className="col-12 col-sm-4 my-3">
           <img
             src={process.env.PUBLIC_URL + itemSelected.src_s}
             alt={itemSelected.title}
             style={{ maxHeight: '450px', cursor: 'pointer' }}
-            className="d-block mx-auto img-fluid hover-outline"
+            className="d-block mx-auto img-fluid hover-enlarge"
             data-bs-toggle="modal"
             data-bs-target="#imageModal"
           />

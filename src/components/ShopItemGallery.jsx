@@ -45,7 +45,7 @@ function ShopItemGallery() {
 
   return (
     <>
-      <p>{`(${itemsShown.length} items)`}</p>
+      <h5 className="text-muted">{`${itemsShown.length} items`}</h5>
       <ul className="row gy-4 gx-4 p-0" style={{ listStyle: 'none' }}>
         {itemsShown.length > 0 ? itemsShown : <h3>No results found</h3>}
       </ul>

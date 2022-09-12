@@ -12,7 +12,7 @@ function CartTotalDisplay() {
         Total: {formatCurrency(totalPrice)}
       </h3>
       <div className="col-6 col-md-2 d-flex justify-content-end">
-        <button type="button" className="btn btn-success">
+        <button type="button" className="btn btn-primary">
           Checkout
         </button>
       </div>

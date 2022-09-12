@@ -27,10 +27,10 @@ function ShopSortingButtons() {
   };
 
   return (
-    <div>
+    <div className="d-flex flex-wrap">
       <button
         type="button"
-        className="btn btn-light m-1"
+        className="btn btn-light m-1 border-secondary border-opacity-25 hover-enlarge"
         onClick={() => setCategory('all')}
       >
         All
@@ -39,18 +39,18 @@ function ShopSortingButtons() {
         <button
           type="button"
           key={`cat-${cat}`}
-          className="btn btn-light m-1 text-capitalize"
+          className="btn btn-light m-1 text-capitalize border-secondary border-opacity-25 hover-enlarge"
           onClick={() => setCategory(cat)}
           style={{
             color: `${cat}`,
-            textShadow: ' -1px 0 grey, 0 1px grey, 1px 0 grey, 0 -1px grey',
+            textShadow: ' -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black',
           }}
         >
           {cat}
         </button>
       ))}
       <select
-        className="form-select d-inline bg-light m-1"
+        className="form-select d-inline bg-light m-1 hover-enlarge"
         style={{ width: 'max-content' }}
         aria-label="Sort by"
         onChange={handleChange}

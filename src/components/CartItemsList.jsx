@@ -20,7 +20,7 @@ function CartItemsList() {
     <ul className="p-0" style={{ listStyle: 'none' }}>
       {cart.map((item) => (
         <li key={item.id} className="border mb-3 rounded shadow-sm">
-          <div className="d-sm-flex">
+          <div className="d-sm-flex text-bg-light">
             <Link to={`/product/${item.id}`}>
               <img
                 className="mx-auto"

@@ -6,11 +6,18 @@ import siteInfo from '../data/siteInfo';
 function Navbar() {
   const { totalNumItems, handleSearchItem, searchBar } = useContext(AppContext);
   return (
-    <nav className="row bg-light sticky-top justify-content-center">
-      <div className="navbar navbar-expand-md bg-light p-3 col-9">
+    <nav className="row bg-white sticky-top justify-content-center border-bottom shadow">
+      <div className="navbar navbar-expand-md bg-white p-3 col-9">
         <div className="container-fluid">
           <NavLink className="navbar-brand font-handlee fs-4" to="/">
-            {siteInfo.siteTitle}
+            <img
+              src={`${process.env.PUBLIC_URL}/icons/color.svg`}
+              alt=""
+              width="26px"
+              height="26px"
+              className="me-2"
+            />
+            <span>{siteInfo.siteTitle}</span>
           </NavLink>
           <button
             className="navbar-toggler"
@@ -44,22 +51,22 @@ function Navbar() {
               <input
                 className="form-control me-2"
                 type="search"
-                placeholder="Search"
+                placeholder="Search products"
                 aria-label="Search"
                 ref={searchBar}
               />
-              <button className="btn btn-outline-success" type="submit">
-                Search
+              <button className="btn btn-danger" type="submit">
+                <i className="bi bi-search" />
               </button>
             </form>
           </div>
         </div>
       </div>
-      <div className="col-2 py-3 d-flex bg-light justify-content-end">
+      <div className="col-2 py-3 d-flex bg-white justify-content-end">
         <NavLink to="/cart">
           <button
             type="button"
-            className="btn btn-light position-relative"
+            className="btn btn-white position-relative"
             data-testid="cart"
             tabIndex="-1"
           >
@@ -70,7 +77,7 @@ function Navbar() {
               height="26px"
               className="opacity-50"
             />
-            <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">
+            <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
               {totalNumItems > 0 && totalNumItems}
             </span>
           </button>
