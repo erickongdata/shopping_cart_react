@@ -85,7 +85,12 @@ describe('Cart page functions', () => {
     addItemToCart(1);
     const linkCart = screen.getByTestId('cart');
     userEvent.click(linkCart);
-    expect(screen.getByText(/Beauty and the Beast/i)).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', {
+        name: /Beauty and the Beast/i,
+      })
+    ).toBeInTheDocument();
+    // expect(screen.getByText(/Beauty and the Beast/i)).toBeInTheDocument();
   });
 
   it('item quantity is correct on Cart page', () => {
@@ -151,9 +156,16 @@ describe('Multiple items test', () => {
   it('add two different items to Cart', () => {
     render(<App />);
     addTwoItemsToCart();
-
-    expect(screen.getByText(/Beauty and the Beast/i)).toBeInTheDocument();
-    expect(screen.getByText(/cinderella/i)).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', {
+        name: /Beauty and the Beast/i,
+      })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', {
+        name: /cinderella/i,
+      })
+    ).toBeInTheDocument();
   });
 
   it('total price of two different items to Cart is correct', () => {

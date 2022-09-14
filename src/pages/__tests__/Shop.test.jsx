@@ -46,9 +46,7 @@ describe('rendering data', () => {
         sorting={{ alpha: '', price: '' }}
       />
     );
-    expect(
-      screen.getByRole('heading', { name: /alice in wonderland/i })
-    ).toBeInTheDocument();
+    expect(screen.getByText(/alice in wonderland/i)).toBeInTheDocument();
     expect(screen.getByText(/19.99/i)).toBeInTheDocument();
   });
 
@@ -65,9 +63,7 @@ describe('rendering data', () => {
         sorting={{ alpha: '', price: '' }}
       />
     );
-    const elements = screen.getAllByRole('heading', {
-      name: /alice in wonderland/i,
-    });
+    const elements = screen.getAllByText(/alice in wonderland/i);
     expect(elements.length).toBe(3);
   });
 });

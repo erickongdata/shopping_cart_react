@@ -68,14 +68,19 @@ describe('rendering data', () => {
     renderWithRouter(
       <CartContext cart={[{ id: '2', quantity: 4 }]} totalPrice={0} />
     );
-    expect(screen.getByText(/Cinderella/i)).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', {
+        name: /Cinderella/i,
+      })
+    ).toBeInTheDocument();
     expect(screen.getByText(/quantity: 4/i)).toBeInTheDocument();
-    expect(screen.getByText(/43\.96/i)).toBeInTheDocument();
+
+    expect(screen.getByText(/price: £43\.96/i)).toBeInTheDocument();
   });
 
   it('renders total price', () => {
     renderWithRouter(<CartContext cart={[]} totalPrice={12345} />);
-    expect(screen.getByText(/12,345/i)).toBeInTheDocument();
+    expect(screen.getByText(/Subtotal: £12,345/i)).toBeInTheDocument();
   });
 
   it('renders three different cart items correctly', () => {
@@ -89,8 +94,20 @@ describe('rendering data', () => {
         totalPrice={0}
       />
     );
-    expect(screen.getByText(/Beauty and the Beast/i)).toBeInTheDocument();
-    expect(screen.getByText(/Cinderella/i)).toBeInTheDocument();
-    expect(screen.getByText(/The Ugly Duckling/i)).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', {
+        name: /Beauty and the Beast/i,
+      })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', {
+        name: /Cinderella/i,
+      })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', {
+        name: /The Ugly Duckling/i,
+      })
+    ).toBeInTheDocument();
   });
 });
