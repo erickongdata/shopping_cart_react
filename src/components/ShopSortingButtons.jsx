@@ -50,7 +50,7 @@ function ShopSortingButtons() {
         </button>
       ))}
       <select
-        className="form-select d-inline bg-light m-1 hover-enlarge"
+        className="form-select d-inline bg-light m-1 ms-auto hover-enlarge"
         style={{ width: 'max-content' }}
         aria-label="Sort by"
         onChange={handleChange}

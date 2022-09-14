@@ -16,8 +16,8 @@ function Product() {
 
   return (
     <div className="container">
-      <div className="row pt-5 pb-5">
-        <div className="col-12 col-sm-4 my-3">
+      <div className="row mt-3 pt-5 pb-5 border-bottom border-top">
+        <div className="col-12 col-sm-4 mb-5">
           <img
             src={process.env.PUBLIC_URL + itemSelected.src_s}
             alt={itemSelected.title}
@@ -28,10 +28,12 @@ function Product() {
           />
         </div>
         <div className="col-12 col-sm-8">
-          <h1>{itemSelected.title}</h1>
-          <h2>{formatCurrency(itemSelected.price)}</h2>
-          <p className="lead">Product code: {itemSelected.id}</p>
-          <p style={{ maxWidth: '75ch' }}>{itemSelected.description}</p>
+          <h1 className="mb-4">{itemSelected.title}</h1>
+          <h2 className="mb-2">{formatCurrency(itemSelected.price)}</h2>
+          <p className="lead mb-4">Product code: {itemSelected.id}</p>
+          <p className="mb-4" style={{ maxWidth: '60ch' }}>
+            {itemSelected.description}
+          </p>
           <div style={{ height: '5rem' }}>
             <form onSubmit={(e) => handleSubmitQuantity(e, productId)}>
               <div className="d-flex">
@@ -57,7 +59,7 @@ function Product() {
               </div>
             </form>
             <p className="text-danger m-2">
-              {numInCart > 0 && `${numInCart} in Cart`}
+              {numInCart > 0 && `Quantity ${numInCart} in Cart`}
             </p>
           </div>
         </div>
