@@ -22,12 +22,12 @@ function HomeCategorySelect() {
         <li key={`cat-card-${cat.color}`}>
           <Link to="/shop" onClick={() => setCategory(`${cat.color}`)}>
             <div
-              className="hover-outline my-3 mx-3 bg-white position-relative d-flex justify-content-center align-items-center"
+              className="hover-outline my-3 mx-3 bg-white position-relative d-flex justify-content-center align-items-center rounded"
               role="button"
             >
               <h2 className="position-absolute text-black">{cat.color}</h2>
               <img
-                className="hover-fade"
+                className="hover-fade rounded"
                 src={process.env.PUBLIC_URL + cat.image}
                 alt=""
                 style={cardImgStyle}

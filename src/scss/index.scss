@@ -18,11 +18,11 @@ input[type='number'] {
 }
 
 .bg-img {
-  background-image: url('../images/doodle_light.png');
+  background-image: url('../images/doodle_light.jpeg');
 }
 
 .bg-img2 {
-  background-image: url('../images/doodle_light.png');
+  background-image: url('../images/doodle_light.jpeg');
 }
 
 .site-title {
@@ -38,6 +38,9 @@ input[type='number'] {
 // ----------------------------------------------
 // Utility classes
 // ----------------------------------------------
+.min-vh-80 {
+  min-height: 80vh;
+}
 
 // Padding
 .pt-6 {

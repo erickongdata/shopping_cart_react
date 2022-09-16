@@ -6,11 +6,11 @@ function About() {
   const itemSelected = data.find((item) => item.id === 'YE1');
   return (
     <div className="container bg-img">
-      <div className="pt-3 row vh-100">
-        <div className="pb-5 col-12 col-lg-8">
+      <div className="pt-3 row min-vh-80">
+        <div className="col-12 col-lg-7">
           <h1 className="display-3">Hello!</h1>
           <h3 className="font-handlee">Thank you for shopping with us!</h3>
-          <p>
+          <p style={{ maxWidth: '60ch' }}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
             nisi iure hic, quia repellendus adipisci facilis labore nobis
             deserunt sapiente cumque molestias, reprehenderit modi quam saepe?
@@ -19,17 +19,16 @@ function About() {
             praesentium veritatis nostrum minima obcaecati ex similique magnam
             mollitia?
           </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam
-            eveniet ducimus nihil vero pariatur dolore quia corporis? Minima
-            sunt impedit voluptatum non esse repellat nostrum accusamus. Nulla
-            similique, quibusdam nemo voluptatum nesciunt dicta ea voluptate
-            iusto tempora unde! Suscipit, velit?
+          <p style={{ maxWidth: '60ch' }}>
+            Ullam eveniet ducimus nihil vero pariatur dolore quia corporis?
+            Minima sunt impedit voluptatum non esse repellat nostrum accusamus.
+            Nulla similique, quibusdam nemo voluptatum nesciunt dicta ea
+            voluptate iusto tempora unde! Suscipit, velit?
           </p>
           <h3 className="font-handlee">Love from</h3>
           <h3 className="font-handlee">All Things Colour.</h3>
         </div>
-        <div className="col-12 col-lg-4">
+        <div className="col-12 col-lg-5">
           <img
             src={process.env.PUBLIC_URL + itemSelected.src_s}
             alt=""

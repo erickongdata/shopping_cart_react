@@ -33,7 +33,7 @@ function Navbar() {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <NavLink className="nav-link" to="/shop">
+                <NavLink className="nav-link" to="/shop" data-testid="shop">
                   SHOP
                 </NavLink>
               </li>

@@ -57,9 +57,7 @@ jest.mock('../data/products', () => {
 describe('Shop page functions', () => {
   it('clicking on a product card link goes to Product page', () => {
     render(<App />);
-    const linkShop = screen.getByRole('link', {
-      name: /shop/i,
-    });
+    const linkShop = screen.getByTestId('shop');
     userEvent.click(linkShop);
     const linkProduct = screen.getByText(/Beauty and the Beast/i);
     expect(linkProduct).toBeInTheDocument();
@@ -73,9 +71,7 @@ describe('Shop page functions', () => {
 describe('Product page functions', () => {
   it('clicking on add to cart, displays message 1 in cart afterwards', () => {
     render(<App />);
-    const linkShop = screen.getByRole('link', {
-      name: /shop/i,
-    });
+    const linkShop = screen.getByTestId('shop');
     userEvent.click(linkShop);
     const linkProduct = screen.getByText(/Beauty and the Beast/i);
     expect(linkProduct).toBeInTheDocument();
@@ -87,9 +83,7 @@ describe('Product page functions', () => {
 
   it('adding quantity of 4, displays message 4 in cart afterwards', () => {
     render(<App />);
-    const linkShop = screen.getByRole('link', {
-      name: /shop/i,
-    });
+    const linkShop = screen.getByTestId('shop');
     userEvent.click(linkShop);
     const linkProduct = screen.getByText(/Beauty and the Beast/i);
     expect(linkProduct).toBeInTheDocument();

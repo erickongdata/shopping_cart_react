@@ -20,7 +20,7 @@ function ShopItemGallery() {
         className="text-decoration-none text-dark"
       >
         <div
-          className="card shadow-sm hover-enlarge"
+          className="card shadow-sm hover-enlarge bg-light"
           style={{ height: '280px' }}
         >
           <img

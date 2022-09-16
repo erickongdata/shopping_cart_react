@@ -1,16 +1,19 @@
 import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../AppContext';
 import formatCurrency from '../utilities/formatCurrency';
 
 function CartTotalDisplay() {
-  const { cart, data, totalPrice, totalNumItems } = useContext(AppContext);
+  const { cart, data, totalPrice, totalNumItems, emptyCart } =
+    useContext(AppContext);
+  const navigate = useNavigate();
 
   // Get item data from json data file
   const itemSelected = (id) => data.find((item) => item.id === id);
 
   return (
     <>
-      <div className="bg-light border fixed-bottom px-1 py-3">
+      <div className="bg-light border border-2 fixed-bottom px-1 py-3">
         <div className="row container-xxl mx-auto">
           <h5 className="col-12 col-md-5 text-start">
             Cart {`(${totalNumItems} items)`}
@@ -55,7 +58,7 @@ function CartTotalDisplay() {
             <div className="modal-body">
               {cart.length > 0 ? (
                 <p className="fw-bold">
-                  Done! The following items will be delivered.
+                  The following items will be delivered.
                 </p>
               ) : (
                 <p>No items</p>
@@ -92,10 +95,16 @@ function CartTotalDisplay() {
             <div className="modal-footer">
               <button
                 type="button"
-                className="btn btn-secondary"
+                className="btn btn-primary"
                 data-bs-dismiss="modal"
+                onClick={() => {
+                  if (cart.length > 0) {
+                    emptyCart();
+                    navigate('/');
+                  }
+                }}
               >
-                Close
+                Confirm order
               </button>
             </div>
           </div>

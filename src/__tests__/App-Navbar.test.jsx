@@ -57,18 +57,14 @@ describe('testing routing with Navbar', () => {
 
   it('go to Shop page works', () => {
     render(<App />);
-    const link = screen.getByRole('link', {
-      name: /shop/i,
-    });
+    const link = screen.getByTestId('shop');
     userEvent.click(link);
     expect(screen.getByText(/Shop-Page/i)).toBeInTheDocument();
   });
 
   it('go to Shop then back to Home page works', () => {
     render(<App />);
-    const link = screen.getByRole('link', {
-      name: /shop/i,
-    });
+    const link = screen.getByTestId('shop');
     userEvent.click(link);
     expect(screen.getByText(/Shop-Page/i)).toBeInTheDocument();
     const linkHome = screen.getByRole('link', {

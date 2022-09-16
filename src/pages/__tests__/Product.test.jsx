@@ -1,7 +1,12 @@
 import { render, screen } from '@testing-library/react';
 import { useMemo } from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import Product from '../Product';
 import { AppContext } from '../../AppContext';
+
+function renderWithRouter(component) {
+  return render(<BrowserRouter>{component}</BrowserRouter>);
+}
 
 const data = [
   {
@@ -45,7 +50,7 @@ function ProductContext() {
 
 describe('rendering data', () => {
   it('renders item with default productId = 1 correctly', () => {
-    render(<ProductContext />);
+    renderWithRouter(<ProductContext />);
     expect(screen.getByText(/beauty and the beast/i)).toBeInTheDocument();
     expect(screen.getByText(/Product code: 1/i)).toBeInTheDocument();
     expect(screen.getByText(/12\.99/i)).toBeInTheDocument();

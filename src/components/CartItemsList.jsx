@@ -22,16 +22,16 @@ function CartItemsList() {
       style={{ listStyle: 'none', maxWidth: '640px' }}
     >
       {cart.map((item) => (
-        <li key={item.id} className="border mb-3 rounded shadow-sm">
-          <div className="d-sm-flex text-bg-light">
+        <li key={item.id} className="border mb-3 bg-light rounded shadow-sm">
+          <div className="d-sm-flex">
             <Link to={`/product/${item.id}`}>
               <img
-                className="mx-auto"
+                className="mx-auto rounded"
                 src={process.env.PUBLIC_URL + itemSelected(item.id).src_s}
                 alt={itemSelected(item.id).title}
                 style={{
-                  height: '160px',
-                  width: '160px',
+                  height: '180px',
+                  width: '180px',
                   objectFit: 'cover',
                   display: 'block',
                 }}

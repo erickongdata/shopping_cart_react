@@ -57,6 +57,10 @@ export function AppProvider({ children }) {
     );
   };
 
+  const emptyCart = () => {
+    setCart([]);
+  };
+
   const handleRemoveCartItem = (id) => {
     setCart((currCart) => currCart.filter((item) => item.id !== id));
   };
@@ -115,6 +119,7 @@ export function AppProvider({ children }) {
       handleAddCartItem,
       handleSubtractCartItem,
       handleRemoveCartItem,
+      emptyCart,
       handleItemNumChange,
       handleSubmitQuantity,
       handleSearchItem,

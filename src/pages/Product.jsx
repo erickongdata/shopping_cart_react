@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { AppContext } from '../AppContext';
 import formatCurrency from '../utilities/formatCurrency';
 import range from '../utilities/arrayFunctions';
@@ -15,9 +15,9 @@ function Product() {
   const numArr = range(1, 10);
 
   return (
-    <div className="container">
-      <div className="row mt-3 pt-5 pb-5 border-bottom border-top">
-        <div className="col-12 col-sm-4 mb-5">
+    <div className="container min-vh-80 bg-img">
+      <div className="row mt-3 pt-5 pb-5 bg-light border rounded">
+        <div className="col-12 col-sm-5 mb-5">
           <img
             src={process.env.PUBLIC_URL + itemSelected.src_s}
             alt={itemSelected.title}
@@ -27,7 +27,7 @@ function Product() {
             data-bs-target="#imageModal"
           />
         </div>
-        <div className="col-12 col-sm-8">
+        <div className="col-12 col-sm-7">
           <h1 className="mb-4">{itemSelected.title}</h1>
           <h2 className="mb-2">{formatCurrency(itemSelected.price)}</h2>
           <p className="lead mb-4">Product code: {itemSelected.id}</p>
@@ -61,6 +61,18 @@ function Product() {
             <p className="text-danger m-2">
               {numInCart > 0 && `Quantity ${numInCart} in Cart`}
             </p>
+          </div>
+          <div className="mt-3">
+            <Link to="/shop">
+              <button type="button" className="btn btn-secondary me-1">
+                Continue Shopping
+              </button>
+            </Link>
+            <Link to="/cart">
+              <button type="button" className="btn btn-primary">
+                Go to Cart
+              </button>
+            </Link>
           </div>
         </div>
       </div>

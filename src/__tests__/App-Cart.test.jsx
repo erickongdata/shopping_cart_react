@@ -47,9 +47,7 @@ jest.mock('../data/products', () => {
 });
 
 function addItemToCart(itemQuantity) {
-  const linkShop = screen.getByRole('link', {
-    name: /shop/i,
-  });
+  const linkShop = screen.getByTestId('shop');
   userEvent.click(linkShop);
   const linkProduct = screen.getByText(/Beauty and the Beast/i);
   userEvent.click(linkProduct);
@@ -60,9 +58,7 @@ function addItemToCart(itemQuantity) {
 }
 
 function addTwoItemsToCart() {
-  const linkShop = screen.getByRole('link', {
-    name: /shop/i,
-  });
+  const linkShop = screen.getByTestId('shop');
   userEvent.click(linkShop);
   const linkProduct1 = screen.getByText(/Beauty and the Beast/i);
   userEvent.click(linkProduct1);
