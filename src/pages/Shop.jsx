@@ -7,7 +7,7 @@ function Shop() {
   const { category } = useContext(AppContext);
 
   return (
-    <div className="container">
+    <div className="container-xxl">
       <div className="pt-3 pb-7">
         <div className="mb-3">
           <ShopSortingButtons />

@@ -4,7 +4,7 @@ import HomeCategorySelect from '../components/HomeCategorySelect';
 
 function Home() {
   return (
-    <div className="container">
+    <div className="container-xxl">
       <div className="pt-3 pb-7">
         <h3 className="text-center bg-danger bg-gradient text-light">
           SPECIAL SALE ON NOW!

@@ -15,11 +15,11 @@ function Product() {
   const numArr = range(1, 10);
 
   return (
-    <div className="container min-vh-80 bg-img">
+    <div className="container-xxl min-vh-80 bg-img">
       <div className="row mt-3 pt-5 pb-5 bg-light border rounded">
-        <div className="col-12 col-sm-5 mb-5">
+        <div className="col-12 col-sm-5 mb-5 px-4">
           <img
-            src={process.env.PUBLIC_URL + itemSelected.src_s}
+            src={process.env.PUBLIC_URL + itemSelected.src}
             alt={itemSelected.title}
             style={{ maxHeight: '450px', cursor: 'pointer' }}
             className="d-block mx-auto img-fluid hover-enlarge"
