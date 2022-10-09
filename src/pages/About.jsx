@@ -6,7 +6,7 @@ function About() {
   const itemSelected = data.find((item) => item.id === 'YE1');
   return (
     <div className="container-xxl bg-img">
-      <div className="pt-3 row min-vh-80">
+      <div className="pt-3 row min-vh-100">
         <div className="col-12 col-lg-7 px-3">
           <div className="mx-auto" style={{ maxWidth: 'max-content' }}>
             <h1 className="display-3">Hello!</h1>

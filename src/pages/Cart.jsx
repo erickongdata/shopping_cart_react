@@ -10,7 +10,7 @@ function Cart() {
   return (
     <>
       <div className="container-xxl bg-img">
-        <div className="pt-3 pb-7 mb-5 min-vh-80">
+        <div className="pt-3 pb-7 mb-5 min-vh-100">
           {cart.length === 0 ? (
             <h1 className="text-center">No items to display</h1>
           ) : (
