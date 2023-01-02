@@ -6,46 +6,35 @@ const getCategories = (data) => {
   return unique;
 };
 
-const sortAlpha = (data, order) => {
-  const dataIn = [...data];
-  if (order === '') return dataIn;
-  if (order === 'az')
+const filterData = (data, category, sorting, searchTerm) => {
+  let dataIn;
+  if (category === 'all') {
+    dataIn = [...data];
+  } else if (category === 'search') {
+    dataIn = [...data].filter((item) =>
+      item.title.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+  } else {
+    dataIn = [...data].filter((item) => item.category === category);
+  }
+
+  if (sorting === 'az') {
     return dataIn.sort((a, b) =>
       a.title === b.title ? 0 : a.title < b.title ? -1 : 1
     );
-  return dataIn.sort((a, b) =>
-    a.title === b.title ? 0 : a.title < b.title ? 1 : -1
-  );
-};
-
-const sortPrice = (data, order) => {
-  const dataIn = [...data];
-  if (order === '') return dataIn;
-  if (order === 'lh') return dataIn.sort((a, b) => a.price - b.price);
-  return dataIn.sort((a, b) => b.price - a.price);
-};
-
-const filterData = (data, category, sortingAlpha, sortingPrice, searchTerm) => {
-  const dataIn = [...data];
-  if (category === 'all')
-    return sortPrice(sortAlpha(dataIn, sortingAlpha), sortingPrice);
-  if (category === 'search')
-    return sortPrice(
-      sortAlpha(
-        dataIn.filter((item) =>
-          item.title.toLowerCase().includes(searchTerm.toLowerCase())
-        ),
-        sortingAlpha
-      ),
-      sortingPrice
+  }
+  if (sorting === 'za') {
+    return dataIn.sort((a, b) =>
+      a.title === b.title ? 0 : a.title < b.title ? 1 : -1
     );
-  return sortPrice(
-    sortAlpha(
-      dataIn.filter((item) => item.category === category),
-      sortingAlpha
-    ),
-    sortingPrice
-  );
+  }
+  if (sorting === 'price-lh') {
+    return dataIn.sort((a, b) => a.price - b.price);
+  }
+  if (sorting === 'price-hl') {
+    return dataIn.sort((a, b) => b.price - a.price);
+  }
+  return dataIn;
 };
 
 export { getCategories, filterData };

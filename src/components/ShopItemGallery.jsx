@@ -7,44 +7,40 @@ import { filterData } from '../utilities/categoryFilter';
 function ShopItemGallery() {
   const { data, category, sorting, searchTerm } = useContext(AppContext);
 
-  const itemsShown = filterData(
-    data,
-    category,
-    sorting.alpha,
-    sorting.price,
-    searchTerm
-  ).map((item) => (
-    <li key={item.id} className="col-12 col-md-6 col-lg-4 col-xlg-3">
-      <Link
-        to={`/product/${item.id}`}
-        className="text-decoration-none text-dark"
-      >
-        <div
-          className="card shadow-sm hover-enlarge bg-light"
-          style={{ height: '280px' }}
+  const itemsShown = filterData(data, category, sorting, searchTerm).map(
+    (item) => (
+      <li key={item.id} className="col-12 col-md-6 col-lg-4 col-xlg-3">
+        <Link
+          to={`/product/${item.id}`}
+          className="text-decoration-none text-dark"
         >
-          <img
-            src={process.env.PUBLIC_URL + item.src_s}
-            alt={item.title}
-            className="card-img-top"
-            style={{
-              objectFit: 'cover',
-              height: '200px',
-            }}
-          />
           <div
-            className="d-flex justify-content-between gx-5 p-1"
-            style={{ height: '80px' }}
+            className="card shadow-sm hover-enlarge bg-light"
+            style={{ height: '280px' }}
           >
-            <div className="card-title pe-4" data-testid="card-title">
-              {item.title}
+            <img
+              src={process.env.PUBLIC_URL + item.src_s}
+              alt={item.title}
+              className="card-img-top"
+              style={{
+                objectFit: 'cover',
+                height: '200px',
+              }}
+            />
+            <div
+              className="d-flex justify-content-between gx-5 p-1"
+              style={{ height: '80px' }}
+            >
+              <div className="card-title pe-4" data-testid="card-title">
+                {item.title}
+              </div>
+              <div>{formatCurrency(item.price)}</div>
             </div>
-            <div>{formatCurrency(item.price)}</div>
           </div>
-        </div>
-      </Link>
-    </li>
-  ));
+        </Link>
+      </li>
+    )
+  );
 
   return (
     <>

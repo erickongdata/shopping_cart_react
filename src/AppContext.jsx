@@ -16,10 +16,7 @@ export function AppProvider({ children }) {
   // cart is an array of objects with properties - id, quantity
   const [cart, setCart] = useLocalStorage('cart', []);
   const [category, setCategory] = useLocalStorage('category', 'all');
-  const [sorting, setSorting] = useLocalStorage('sorting', {
-    alpha: '',
-    price: '',
-  });
+  const [sorting, setSorting] = useLocalStorage('sorting', 'az');
   const [searchTerm, setSearchTerm] = useState('');
   const quantityDropdown = useRef();
   const searchBar = useRef();
